@@ -21,7 +21,7 @@ export default function AboutSection() {
           Step into our world and leave feeling your absolute best.
           <br />
           <br />
-          <spa className="text-sm  text-gray-300   ">
+          <spa className="text-[11px]  text-gray-400   ">
             No be only haircut we dey do, we dey make sure say you go feel
             relaxed and fresh after your session. Come make we reason small, jam
             to some tunes, and let’s get you looking sharp like never before.
