@@ -99,8 +99,8 @@ function Services() {
             onClick={() => setActiveTab(tab)}
             className={`px-2 py-1 rounded-lg text-xs md:text-sm font-medium transition ${
               activeTab === tab
-                ? "bg-gray-500 text-white"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-gray-500 text-white text-[12px] md:text-sm"
+                : "bg-gray-200 text-gray-700 text-[12px] md:text-sm hover:bg-gray-300"
             }`}
           >
             {tab}
