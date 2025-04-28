@@ -110,7 +110,7 @@ function Navbar() {
 
       {/* Mobile Drawer */}
       <Drawer
-        title="Hazard Cutz barbershop"
+        title="Hazard Cutz "
         placement="right"
         onClose={() => setMenuOpen(false)}
         open={menuOpen}
