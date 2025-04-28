@@ -92,7 +92,7 @@ function Services() {
   return (
     <div className="max-w-6xl mx-auto p-6">
       {/* Tabs */}
-      <div className="flex justify-center gap-2 md:gap-4 mb-8 flex-wrap">
+      <div className="flex justify-center gap-2 md:gap-4 text-[8px] md:text-[12px] mb-8 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab}
