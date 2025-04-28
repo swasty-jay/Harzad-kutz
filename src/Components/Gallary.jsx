@@ -197,11 +197,11 @@ function ImageCard({ id, onClick }) {
       style={{ perspective: 500 }}
       onClick={() => onClick(id)}
     >
-      <motion.div className="card-content group-hover:rotate-x-12 group-hover:rotate-y-12 transition-transform duration-300">
+      <motion.div className="card-content group-hover:rotate-x-10 group-hover:rotate-y-10 transition-transform duration-300">
         <img
           src={`/photos/${id}.jpg`}
           alt={`Photo ${id}`}
-          className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-all duration-300"
+          className="w-full h-full object-cover rounded-lg group-hover:scale-95 transition-all duration-300"
         />
       </motion.div>
     </motion.div>
