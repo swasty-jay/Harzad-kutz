@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Home, Scissors } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaInstagram, FaTiktok } from "react-icons/fa";
 
