@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section className="bg-black text-white py-20 px-4 text-center">
+    <section className=" text-white py-20 px-10 text-center border ">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -11,8 +11,10 @@ export default function AboutSection() {
         viewport={{ once: true }}
         className="max-w-4xl mx-auto"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-8">The Vibe</h2>
-        <p className="text-[12px] md:text-[16px] text-gray-300 leading-relaxed mb-8 text-start">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">
+          The Vibe
+        </h2>
+        <p className="text-[12px] md:text-[16px]  leading-relaxed mb-8 text-start text-black">
           At <span className="text-primary font-semibold">Hazard Cutz</span>, we
           blend sharp style with top-tier service. Whether it's a fresh fade, a
           beard trim, or a full transformation, our skilled barbers craft every
@@ -21,7 +23,7 @@ export default function AboutSection() {
           Step into our world and leave feeling your absolute best.
           <br />
           <br />
-          <spa className="text-[11px]  text-gray-400   ">
+          <spa className="text-[11px]  text-gray-600   ">
             No be only haircut we dey do, we dey make sure say you go feel
             relaxed and fresh after your session. Come make we reason small, jam
             to some tunes, and let’s get you looking sharp like never before.
@@ -30,12 +32,6 @@ export default function AboutSection() {
           </spa>
         </p>
 
-        {/* <spa className="text-sm  text-gray-300   font-mono italic">
-          No be only haircut we dey do, we dey make sure say you go feel relaxed
-          and fresh after your session. Come make we reason small, jam to some
-          tunes, and let’s get you looking sharp like never before. 😉💇🏾‍♂️
-          <br /> Book Now and let’s take your style to the next level! <br />
-        </spa> */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

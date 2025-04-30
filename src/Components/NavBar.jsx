@@ -1,163 +1,114 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import { Menu, X, Home, Scissors } from "lucide-react";
 import { motion } from "framer-motion";
-import { Drawer } from "antd"; // 👈 Import Drawer
-import "antd/dist/reset.css"; // 👈 Import Ant Design styles
+import { FaWhatsapp, FaInstagram, FaTiktok } from "react-icons/fa";
 
-import logo from "../assets/logo.jpg"; // Adjust the path
-import { FaInstagram, FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
-import { Link } from "react-router-dom"; // Using React Router's Link
+export default function FloatingNavbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const dropdownRef = useRef();
 
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false); // State for scroll detection
-  const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu
-
-  // UseEffect to listen for scroll events
+  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleScroll = () => {
-      // Check if window scroll position is greater than 50px
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll); // Listen to scroll events
-    return () => window.removeEventListener("scroll", handleScroll); // Clean up on unmount
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-black" : "bg-transparent"
-      }`} // bg-black when scrolled, bg-transparent by default
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="fixed top-4 left-1/2 -translate-x-1/2 bg-white/20 border border-white/30 rounded-xl backdrop-blur-md  px-4 py-2 shadow-md flex items-center justify-between h-12 w-80 space-x-4 z-50"
     >
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-18 md:h-24">
-        {/* Left Nav Links */}
-        <div className="hidden md:flex gap-8 text-white">
-          <Link to="#home" className="hover:text-primary transition">
-            Home
-          </Link>
-          <Link to="#services" className="hover:text-primary transition">
-            Services
-          </Link>
-          <Link to="#gallery" className="hover:text-primary transition">
-            Gallery
-          </Link>
-          <Link to="#contact" className="hover:text-primary transition">
-            Contact
-          </Link>
-        </div>
+      {/* Icons */}
 
-        {/* Logo Middle */}
-        <motion.img
-          src={logo}
-          alt="Hazard Cutz Logo"
-          className="h-10 md:h-18 md:w-18 object-fit mt-5"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-
-        {/* Right Socials + Button */}
-        <div className="hidden md:flex items-center gap-10 text-white">
-          <div className="flex gap-4">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram
-                size={24}
-                className="hover:text-primary transition"
-              />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook size={24} className="hover:text-primary transition" />
-            </a>
-            <a
-              href="https://tiktok.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTiktok size={24} className="hover:text-primary transition" />
-            </a>
-            <a
-              href="https://whatsapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaWhatsapp size={24} className="hover:text-primary transition" />
-            </a>
-          </div>
-          <a
-            href="#book"
-            className="px-4 py-2 bg-primary text-white rounded-md border hover:bg-primary-dark transition"
-          >
-            Book Now
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={() => setMenuOpen(true)}
-            className="text-white text-3xl hamburger-icon"
-          >
-            ☰
-          </button>
-        </div>
+      <div className="relative group flex flex-col items-center">
+        <a
+          href="https://wa.me/2349036666008"
+          className="text-gray-700 hover:text-black  p-2 transition-all duration-200"
+        >
+          <FaWhatsapp size={26} />
+        </a>
+        <span className="absolute top-12 text-sm text-gray-700 bg-white px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-all duration-300">
+          WhatsApp
+        </span>
       </div>
 
-      {/* Mobile Drawer */}
-      <Drawer
-        title="Hazard Cutz "
-        placement="right"
-        onClose={() => setMenuOpen(false)}
-        open={menuOpen}
-        width={250}
-        className="text-yellow-500"
-        closeIcon={<span className="text-gray-500 text-2xl">X</span>}
-      >
-        <div className="flex flex-col space-y-6">
-          <Link
-            to="#home"
-            onClick={() => setMenuOpen(false)}
-            className="text-lg text-yellow-500"
+      <div className="w-px h-6 bg-gray-400"></div>
+
+      <div className="relative group flex flex-col items-center">
+        <a
+          href="https://www.instagram.com/hazardcutz/"
+          className="text-gray-700 hover:text-black"
+        >
+          <FaInstagram size={26} />
+        </a>
+        <span className="absolute top-11 text-sm text-gray-700 bg-white px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-all duration-300">
+          Instagram
+        </span>
+      </div>
+
+      <div className="w-px h-6 bg-gray-400"></div>
+      <div className="relative group flex flex-col items-center">
+        <a
+          href="https://www.tiktok.com/@hazardcutz"
+          className="text-gray-700 hover:text-black"
+        >
+          <FaTiktok size={26} />
+        </a>
+        <span className="absolute top-11 text-sm text-gray-700 bg-white px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-all duration-300">
+          Tiktok
+        </span>
+      </div>
+
+      <div className="w-px h-6 bg-gray-400"></div>
+
+      {/* Hamburger + Dropdown */}
+      <div className="relative" ref={dropdownRef}>
+        <div className="relative group flex flex-col items-center">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="bg-black text-white rounded-full p-2 hover:bg-gray-800 transition-all duration-200"
           >
-            Home
-          </Link>
-          <Link
-            to="#services"
-            onClick={() => setMenuOpen(false)}
-            className="text-lg hover:text-primary"
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+          <span className="absolute top-12 text-sm text-gray-700 bg-white px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-all duration-300">
+            Menu
+          </span>
+        </div>
+        {/* Animated Dropdown */}
+        <div
+          className={`absolute right-0 mt-2 w-44 bg-white border shadow-lg rounded-md py-2 px-3 transform transition-all duration-300 origin-top ${
+            menuOpen
+              ? "scale-100 opacity-100 visible"
+              : "scale-95 opacity-0 invisible"
+          }`}
+        >
+          <a
+            href="#services"
+            className="block text-gray-700 hover:text-black py-1 transition-colors duration-200"
           >
             Services
-          </Link>
-          <Link
-            to="#gallery"
-            onClick={() => setMenuOpen(false)}
-            className="text-lg hover:text-primary"
+          </a>
+          <a
+            href="#about"
+            className="block text-gray-700 hover:text-black py-1 transition-colors duration-200"
+          >
+            About
+          </a>
+          <a
+            href="#gallery"
+            className="block text-gray-700 hover:text-black py-1 transition-colors duration-200"
           >
             Gallery
-          </Link>
-          <Link
-            to="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="text-lg hover:text-primary"
-          >
-            Contact
-          </Link>
-          <Link
-            to="#book"
-            onClick={() => setMenuOpen(false)}
-            className="px-4 py-2 bg-primary text-center rounded-full hover:bg-primary-dark transition"
-          >
-            Book Now
-          </Link>
+          </a>
         </div>
-      </Drawer>
-    </nav>
+      </div>
+    </motion.div>
   );
 }
-
-export default Navbar;
