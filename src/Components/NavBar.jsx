@@ -65,7 +65,7 @@ export default function NavBar() {
         <div className="flex items-center space-x-4">
           <div className="relative group">
             <a
-              href="https://wa.me/2349036666008"
+              href="https://wa.me/+233559891727"
               className="text-gray-900 hover:text-black p-1 transition-all duration-200"
             >
               <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6" />
@@ -81,7 +81,7 @@ export default function NavBar() {
 
           <div className="relative group">
             <a
-              href="https://www.instagram.com/hazardcutz/"
+              href="https://www.instagram.com/hazard_kutz_barbershop?igsh=MW9rNThicXgwd2h3&utm_source=qr"
               className="text-gray-900 hover:text-black p-1 transition-all duration-200"
             >
               <FaInstagram className="w-5 h-5 md:w-6 md:h-6" />
@@ -97,7 +97,7 @@ export default function NavBar() {
 
           <div className="relative group">
             <a
-              href="https://www.tiktok.com/@hazardcutz"
+              href="https://www.tiktok.com/@hazardkutz?_t=ZS-8vzjYp7RS1i&_r=1"
               className="text-gray-900 hover:text-black p-1 transition-all duration-200"
             >
               <FaTiktok className="w-5 h-5 md:w-6 md:h-6" />

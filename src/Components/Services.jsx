@@ -115,7 +115,7 @@ function Services() {
             onClick={() => setActiveTab(tab)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-3 py-1 text-[10px] font-medium tracking-wide uppercase transition-all duration-300 ${
+            className={`px-3 py-1 text-[10px] md:text-[14px] font-medium tracking-wide uppercase transition-all duration-300 ${
               activeTab === tab
                 ? "bg-amber-400 text-black"
                 : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-400"

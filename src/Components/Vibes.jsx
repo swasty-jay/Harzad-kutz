@@ -108,7 +108,7 @@ const CornerDecoration = ({ position = "top-left" }) => {
 
 export default function VibeSection() {
   return (
-    <section className="text-white py-20 px-10 text-center relative">
+    <section className="text-white py-3 px-10 text-center relative">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function VibeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="relative mx-auto mb-10 p-6 md:p-8 rounded-lg border-2 border-gray-300 shadow-sm bg-white"
+          className="relative mx-auto mb-10 p-6 md:p-8 rounded-lg border-2 border-gray-300 shadow-sm bg-gray-100"
           style={{
             backgroundImage:
               "radial-gradient(circle at 50% 50%, rgba(214, 40, 40, 0.03) 0%, rgba(255, 255, 255, 0) 70%)",
@@ -140,7 +140,7 @@ export default function VibeSection() {
           <div className="text-start">
             <p className="text-[15px] md:text-[18px] leading-relaxed text-black font-[inter] italic">
               At{" "}
-              <span className="text-amber-400 font-semibold uppercase">
+              <span className="text-amber-400 font-semibold uppercase italic">
                 Hazard Cutz
               </span>
               , we blend sharp style with top-tier service. Whether it's a fresh

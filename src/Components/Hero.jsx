@@ -1,45 +1,3 @@
-// // src/components/HeroSection.jsx
-// import { motion } from "framer-motion";
-// import barber1 from "../assets/barber-1.jpg"; // use your best main image
-
-// function HeroSection() {
-//   return (
-//     <section
-//       className="relative h-screen w-full bg-cover bg-center flex items-center justify-center py-10"
-//       style={{ backgroundImage: `url(${barber1})` }}
-//     >
-//       {/* Overlay */}
-//       {/* <div className="absolute inset-0 bg-black bg-opacity-10" /> */}
-
-//       {/* Content */}
-//       <motion.div
-//         className="relative text-center px-4"
-//         initial={{ opacity: 0, y: 30 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 1 }}
-//       >
-//         <h1 className="text-4xl md:text-6xl font-[poppins] text-white mb-6 leading-tight">
-//           Elevate Your Look <br className="hidden md:block" />
-//           with <span className="text-[#D62828]">Harzad Cutz</span>
-//         </h1>
-//         <p className="text-base md:text-lg font-[inter] text-white max-w-2xl mx-auto mb-8">
-//           Step into precision grooming. From fresh fades to classic cuts, our
-//           barbers bring out the best in you.
-//         </p>
-//         <motion.button
-//           whileHover={{ scale: 1.05 }}
-//           whileTap={{ scale: 0.95 }}
-//           className=" bg-[#D62828] text-white px-6 py-3 rounded-lg font-body font-medium text-sm hover:bg-red-700 transition"
-//         >
-//           Book an Appointment
-//         </motion.button>
-//       </motion.div>
-//     </section>
-//   );
-// }
-// export default HeroSection;
-
-// src/components/HeroSection.jsx
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import barber1 from "../assets/barber-1.jpg"; // main image
@@ -83,8 +41,10 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight"
         >
-          <span className="block">MASTER THE</span>
-          <span className="text-amber-400 italic block">CRAFT OF STYLE</span>
+          <span className="block text-3xl md:text-6xl">MASTER THE</span>
+          <span className="text-amber-400 italic block text-4xl md:text-7xl">
+            CRAFT OF STYLE
+          </span>
         </motion.h1>
 
         <motion.div
