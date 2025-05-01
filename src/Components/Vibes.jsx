@@ -138,7 +138,7 @@ export default function VibeSection() {
           </div>
 
           <div className="text-start">
-            <p className="text-[12px] md:text-[18px] leading-relaxed text-black font-[inter] italic">
+            <p className="text-[15px] md:text-[18px] leading-relaxed text-black font-[inter] italic">
               At{" "}
               <span className="text-amber-400 font-semibold uppercase">
                 Hazard Cutz

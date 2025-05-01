@@ -3,9 +3,11 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppLayout from "./Pages/AppLayout";
 import Home from "./Pages/Home";
+import Booking from "./Pages/Booking";
 import Services from "./Components/Services";
 import Gallry from "./Components/Gallary";
 import NotFoundPage from "./Pages/NotFound";
+import AboutSection from "./Pages/About";
 
 const App = () => {
   return (
@@ -17,8 +19,9 @@ const App = () => {
           {/* Add more routes here like Services, Gallery, etc. */}
           <Route path="/services" element={<Services />} />
           <Route path="/gallery" element={<Gallry />} />
-          <Route path="/about" element={<div>About Page</div>} />
+          <Route path="/about" element={<AboutSection />} />
           <Route path="/contact" element={<div>Contact Page</div>} />
+          <Route path="/booking" element={<Booking />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
