@@ -1,38 +1,142 @@
+// // src/components/HeroSection.jsx
+// import { motion } from "framer-motion";
+// import barber1 from "../assets/barber-1.jpg"; // use your best main image
+
+// function HeroSection() {
+//   return (
+//     <section
+//       className="relative h-screen w-full bg-cover bg-center flex items-center justify-center py-10"
+//       style={{ backgroundImage: `url(${barber1})` }}
+//     >
+//       {/* Overlay */}
+//       {/* <div className="absolute inset-0 bg-black bg-opacity-10" /> */}
+
+//       {/* Content */}
+//       <motion.div
+//         className="relative text-center px-4"
+//         initial={{ opacity: 0, y: 30 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 1 }}
+//       >
+//         <h1 className="text-4xl md:text-6xl font-[poppins] text-white mb-6 leading-tight">
+//           Elevate Your Look <br className="hidden md:block" />
+//           with <span className="text-[#D62828]">Harzad Cutz</span>
+//         </h1>
+//         <p className="text-base md:text-lg font-[inter] text-white max-w-2xl mx-auto mb-8">
+//           Step into precision grooming. From fresh fades to classic cuts, our
+//           barbers bring out the best in you.
+//         </p>
+//         <motion.button
+//           whileHover={{ scale: 1.05 }}
+//           whileTap={{ scale: 0.95 }}
+//           className=" bg-[#D62828] text-white px-6 py-3 rounded-lg font-body font-medium text-sm hover:bg-red-700 transition"
+//         >
+//           Book an Appointment
+//         </motion.button>
+//       </motion.div>
+//     </section>
+//   );
+// }
+// export default HeroSection;
+
 // src/components/HeroSection.jsx
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import barber1 from "../assets/barber-1.jpg"; // use your best main image
+import barber1 from "../assets/barber-1.jpg"; // main image
 
 function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <section
-      className="relative h-screen w-full bg-cover bg-center flex items-center justify-center py-10"
-      style={{ backgroundImage: `url(${barber1})` }}
-    >
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-10" /> */}
+    <div className="relative w-full h-screen overflow-hidden bg-black">
+      {/* Background Image with Parallax Effect */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 8, ease: "easeOut" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black z-10" />
+        <img
+          src={barber1}
+          alt="Professional Barbershop"
+          className="w-full h-full object-cover opacity-80"
+        />
+      </motion.div>
 
       {/* Content */}
-      <motion.div
-        className="relative text-center px-4"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-          Cuts that Define you
-        </h1>
-        <p className="text-[14px] md:text-2xl text-gray-300 mb-8">
-          unleash your style with Hazard Cutz, where every cut is a masterpiece.
-        </p>
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-8 py-4  text-white rounded-full border-2 border-yellow-500 hover:shadow-lg hover:bg-yellow-600-dark transition"
+      <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-2"
+        ></motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight"
         >
-          Book an Appointment
-        </motion.button>
-      </motion.div>
-    </section>
+          <span className="block">MASTER THE</span>
+          <span className="text-amber-400 italic block">CRAFT OF STYLE</span>
+        </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="w-24 h-1 bg-amber-400 my-6"
+        />
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="max-w-lg text-lg text-gray-300 mb-8"
+        >
+          Premium cuts and classic grooming traditions meet modern style at
+          Harzad Cutz. Our master barbers deliver precision, comfort, and
+          confidence with every visit.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="flex flex-col sm:flex-row gap-4"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-amber-400 text-black font-bold uppercase tracking-wide rounded-sm hover:bg-amber-300 transition-colors duration-300"
+          >
+            Book Now
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 border-2 border-white text-white font-bold uppercase tracking-wide rounded-sm hover:bg-white/10 transition-colors duration-300"
+          >
+            Our Services
+          </motion.button>
+        </motion.div>
+      </div>
+
+      {/* Decorative Elements */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 1.2, delay: 1.2 }}
+        className="absolute bottom-8 left-0 right-0 flex justify-center z-20"
+      ></motion.div>
+    </div>
   );
 }
+
 export default HeroSection;

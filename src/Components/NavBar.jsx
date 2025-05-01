@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaInstagram, FaTiktok } from "react-icons/fa";
 
-export default function FloatingNavbar() {
+export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const dropdownRef = useRef();
 

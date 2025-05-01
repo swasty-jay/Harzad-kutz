@@ -2,14 +2,23 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
+import defaultTheme from "tailwindcss/defaultTheme";
+
 export default defineConfig({
+  content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
   theme: {
-    extend: {
-      colors: {
-        primary: "#FF6347", // Example primary color
-      },
+    fontFamily: {
+      heading: ["Poppins", ...defaultTheme.fontFamily.sans],
+      body: ["Inter", ...defaultTheme.fontFamily.sans],
     },
+    colors: {
+      white: "#FFFFFF",
+      primary: "#1A1A1A",
+      secondary: "#6B7280",
+      accent: "#D62828",
+      borderGray: "#E5E7EB",
+    },
+    extend: {},
   },
   plugins: [react(), tailwindcss()],
 });
