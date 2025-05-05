@@ -1,154 +1,3 @@
-// import React from "react";
-// import { useForm } from "react-hook-form";
-// // import emailjs from "emailjs-com";
-// import { motion } from "framer-motion";
-
-// const BookingForm = () => {
-//   const {
-//     register,
-//     handleSubmit,
-//     reset,
-//     formState: { errors, isSubmitSuccessful },
-//   } = useForm();
-
-//   const onSubmit = (data) => {
-//     emailjs
-//       .send(
-//         "service_8wx6qy7", // Replace with EmailJS ID
-//         "template_134838u", // Replace with Template ID
-//         data,
-//         "o51dHNuIWoCqdooiR" // Replace with User ID
-//       )
-//       .then(() => {
-//         reset();
-//       });
-//   };
-
-//   return (
-//     <section className="relative bg-white min-h-screen py-20 px-4">
-//       <div className="max-w-3xl mx-auto text-center">
-//         <motion.h2
-//           initial={{ opacity: 0, y: -30 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//           className="text-4xl font-heading text-amber-600 mb-6"
-//         >
-//           Book Your Cut
-//         </motion.h2>
-//         <motion.p
-//           initial={{ opacity: 0 }}
-//           animate={{ opacity: 1 }}
-//           transition={{ delay: 0.2, duration: 0.5 }}
-//           className="text-secondary text-lg mb-10 font-body"
-//         >
-//           We got the vibes, the clippers, and the tunes. Let’s get you fresh.
-//         </motion.p>
-//       </div>
-
-//       <motion.form
-//         onSubmit={handleSubmit(onSubmit)}
-//         initial={{ opacity: 0, y: 20 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ delay: 0.3, duration: 0.7 }}
-//         className="bg-white border border-amber-200 rounded-2xl p-8 max-w-2xl mx-auto shadow-xl grid gap-6"
-//       >
-//         <div>
-//           <label className="block font-body text-amber-800 mb-1">
-//             Full Name
-//           </label>
-//           <input
-//             {...register("name", { required: true })}
-//             className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-amber-500"
-//             placeholder="Enter your name"
-//           />
-//           {errors.name && (
-//             <span className="text-red-500 text-sm">Name is required</span>
-//           )}
-//         </div>
-
-//         <div>
-//           <label className="block font-body text-amber-800 mb-1">
-//             Phone Number
-//           </label>
-//           <input
-//             {...register("phone", { required: true })}
-//             className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-amber-500"
-//             placeholder="e.g. 0241234567"
-//           />
-//           {errors.phone && (
-//             <span className="text-red-500 text-sm">Phone is required</span>
-//           )}
-//         </div>
-
-//         <div>
-//           <label className="block font-body text-amber-800 mb-1">Service</label>
-//           <select
-//             {...register("service", { required: true })}
-//             className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-amber-500"
-//           >
-//             <option value="">Choose a service</option>
-//             <option value="Haircut">Haircut</option>
-//             <option value="Beard Trim">Beard Trim</option>
-//             <option value="Full Groom">Full Groom</option>
-//           </select>
-//           {errors.service && (
-//             <span className="text-red-500 text-sm">Select a service</span>
-//           )}
-//         </div>
-
-//         <div>
-//           <label className="block font-body text-amber-800 mb-1">
-//             Preferred Date & Time
-//           </label>
-//           <input
-//             type="datetime-local"
-//             {...register("datetime", { required: true })}
-//             className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-amber-500"
-//           />
-//           {errors.datetime && (
-//             <span className="text-red-500 text-sm">Pick a date/time</span>
-//           )}
-//         </div>
-
-//         <div>
-//           <label className="block font-body text-amber-800 mb-1">
-//             Additional Message
-//           </label>
-//           <textarea
-//             {...register("message")}
-//             className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-amber-500"
-//             rows="4"
-//             placeholder="Tell us anything we need to know"
-//           ></textarea>
-//         </div>
-
-//         <motion.button
-//           whileHover={{ scale: 1.05 }}
-//           whileTap={{ scale: 0.95 }}
-//           type="submit"
-//           className="bg-amber-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-700 transition"
-//         >
-//           Confirm Booking
-//         </motion.button>
-
-//         {isSubmitSuccessful && (
-//           <p className="text-green-600 text-center font-body mt-4">
-//             Booking sent! We’ll get back to you.
-//           </p>
-//         )}
-//       </motion.form>
-
-//       {/* SVG Stickers */}
-//       {/* <div className="absolute top-6 left-8 w-12 opacity-30 rotate-12">✂️</div>
-//       <div className="absolute bottom-10 right-6 w-12 opacity-30 -rotate-6">
-//         💈
-//       </div> */}
-//     </section>
-//   );
-// };
-
-// export default BookingForm;
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCalendarAlt, FaCut, FaClock } from "react-icons/fa";
@@ -171,19 +20,22 @@ export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  //  ₵
   const services = [
-    { id: "haircut", name: "Haircut", price: "₦2,500" },
-    { id: "fade", name: "Fade", price: "₦3,000" },
-    { id: "beard", name: "Beard Trim", price: "₦1,500" },
-    { id: "fullgroom", name: "Full Groom", price: "₦5,000" },
-    { id: "design", name: "Hair Design", price: "₦3,500" },
-    { id: "kids", name: "Kids Cut", price: "₦2,000" },
+    { id: "haircut", name: "Haircut", price: "₵200" },
+    { id: "fade", name: "Taper Fade", price: "₵60" },
+    // { id: "fade", name: "Taper Fade", price: "3,000" },
+    { id: "beard", name: "Beard Trim", price: "₵40" },
+    { id: "family package", name: "Family package", price: "₵500" },
+    { id: "elite experience", name: "Elite Experience", price: "₵300" },
+    { id: "design", name: "Hair Dye", price: "₵120" },
+    { id: "kids", name: "Kids Cut", price: "₵50" },
   ];
 
   const barbers = [
-    { id: "john", name: "John" },
-    { id: "mike", name: "Mike" },
-    { id: "dave", name: "Dave" },
+    { id: "emmanuel", name: "Emmanuel" },
+    // { id: "mike", name: "Mike" },
+    // { id: "dave", name: "Dave" },
   ];
 
   const timeSlots = [
@@ -322,7 +174,7 @@ export default function BookingForm() {
   return (
     <section
       id="booking"
-      className="py-20 bg-gradient-to-b from-white to-gray-100"
+      className="py-20 bg-gradient-to-b from-amber-50 to-amber-100"
     >
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
@@ -333,10 +185,10 @@ export default function BookingForm() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            Book Your <span className="text-black">Appointment</span>
+            Book Your <span className="text-amber-600">Appointment</span>
           </h2>
-          <div className="w-20 h-1 bg-black mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-amber-500 mx-auto mb-6"></div>
+          <p className="text-gray-700 max-w-2xl mx-auto">
             Schedule your next haircut with our professional barbers. Choose
             your preferred service, barber, and time slot.
           </p>
@@ -352,15 +204,15 @@ export default function BookingForm() {
             className="lg:col-span-8"
           >
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="bg-black text-white p-6 flex items-center">
+              <div className="bg-amber-600 text-white p-6 flex items-center">
                 <FaCalendarAlt className="text-2xl mr-4" />
                 <h3 className="text-xl font-bold">Schedule Your Visit</h3>
               </div>
 
               {isSubmitted ? (
                 <div className="p-8 flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                    <Check className="text-green-600 w-8 h-8" />
+                  <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-4">
+                    <Check className="text-amber-600 w-8 h-8" />
                   </div>
                   <h4 className="text-xl font-bold text-gray-800 mb-2">
                     Booking Confirmed!
@@ -371,7 +223,7 @@ export default function BookingForm() {
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="text-black underline hover:text-gray-600 transition-colors"
+                    className="text-amber-600 underline hover:text-amber-700 transition-colors"
                   >
                     Make another booking
                   </button>
@@ -383,13 +235,13 @@ export default function BookingForm() {
                 >
                   {/* Personal Details */}
                   <div className="md:col-span-2">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-4">
+                    <h4 className="text-lg font-semibold text-amber-800 mb-4">
                       Personal Details
                     </h4>
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 mb-2" htmlFor="name">
+                    <label className="block text-gray-900 mb-2" htmlFor="name">
                       Full Name
                     </label>
                     <input
@@ -399,8 +251,8 @@ export default function BookingForm() {
                       value={formData.name}
                       onChange={handleChange}
                       className={`w-full border ${
-                        formErrors.name ? "border-red-500" : "border-gray-300"
-                      } rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all`}
+                        formErrors.name ? "border-red-500" : "border-amber-300"
+                      } rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all`}
                       placeholder="Your name"
                     />
                     {formErrors.name && (
@@ -411,7 +263,7 @@ export default function BookingForm() {
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 mb-2" htmlFor="phone">
+                    <label className="block text-gray-900 mb-2" htmlFor="phone">
                       Phone Number
                     </label>
                     <input
@@ -421,8 +273,8 @@ export default function BookingForm() {
                       value={formData.phone}
                       onChange={handleChange}
                       className={`w-full border ${
-                        formErrors.phone ? "border-red-500" : "border-gray-300"
-                      } rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all`}
+                        formErrors.phone ? "border-red-500" : "border-amber-300"
+                      } rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all`}
                       placeholder="Your phone number"
                     />
                     {formErrors.phone && (
@@ -433,7 +285,7 @@ export default function BookingForm() {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className="block text-gray-700 mb-2" htmlFor="email">
+                    <label className="block text-gray-900 mb-2" htmlFor="email">
                       Email Address
                     </label>
                     <input
@@ -443,8 +295,8 @@ export default function BookingForm() {
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full border ${
-                        formErrors.email ? "border-red-500" : "border-gray-300"
-                      } rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all`}
+                        formErrors.email ? "border-red-500" : "border-amber-300"
+                      } rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all`}
                       placeholder="Your email address"
                     />
                     {formErrors.email && (
@@ -455,15 +307,15 @@ export default function BookingForm() {
                   </div>
 
                   {/* Service Selection */}
-                  <div className="md:col-span-2 pt-4 border-t border-gray-100">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-4">
+                  <div className="md:col-span-2 pt-4 border-t border-amber-100">
+                    <h4 className="text-lg font-semibold text-amber-800 mb-4">
                       Service Details
                     </h4>
                   </div>
 
                   <div>
                     <label
-                      className="block text-gray-700 mb-2"
+                      className="block text-gray-900 mb-2"
                       htmlFor="service"
                     >
                       Select Service
@@ -476,12 +328,18 @@ export default function BookingForm() {
                       className={`w-full border ${
                         formErrors.service
                           ? "border-red-500"
-                          : "border-gray-300"
-                      } rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all`}
+                          : "border-amber-300"
+                      } rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all`}
                     >
-                      <option value="">Choose a service</option>
+                      <option value="" className="font-[inter]">
+                        Choose a service
+                      </option>
                       {services.map((service) => (
-                        <option key={service.id} value={service.id}>
+                        <option
+                          key={service.id}
+                          value={service.id}
+                          className="font-[inter]"
+                        >
                           {service.name} - {service.price}
                         </option>
                       ))}
@@ -495,7 +353,7 @@ export default function BookingForm() {
 
                   <div>
                     <label
-                      className="block text-gray-700 mb-2"
+                      className="block text-gray-900 mb-2"
                       htmlFor="barber"
                     >
                       Select Barber
@@ -506,8 +364,10 @@ export default function BookingForm() {
                       value={formData.barber}
                       onChange={handleChange}
                       className={`w-full border ${
-                        formErrors.barber ? "border-red-500" : "border-gray-300"
-                      } rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all`}
+                        formErrors.barber
+                          ? "border-red-500"
+                          : "border-amber-300"
+                      } rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all`}
                     >
                       <option value="">Choose a barber</option>
                       {barbers.map((barber) => (
@@ -524,14 +384,14 @@ export default function BookingForm() {
                   </div>
 
                   {/* Date and Time */}
-                  <div className="md:col-span-2 pt-4 border-t border-gray-100">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-4">
+                  <div className="md:col-span-2 pt-4 border-t border-amber-100">
+                    <h4 className="text-lg font-semibold text-amber-800 mb-4">
                       Date & Time
                     </h4>
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 mb-2" htmlFor="date">
+                    <label className="block text-gray-900 mb-2" htmlFor="date">
                       Select Date
                     </label>
                     <input
@@ -543,8 +403,8 @@ export default function BookingForm() {
                       value={formData.date}
                       onChange={handleChange}
                       className={`w-full border ${
-                        formErrors.date ? "border-red-500" : "border-gray-300"
-                      } rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all`}
+                        formErrors.date ? "border-red-500" : "border-amber-300"
+                      } rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all`}
                     />
                     {formErrors.date && (
                       <p className="text-red-500 text-sm mt-1">
@@ -554,7 +414,7 @@ export default function BookingForm() {
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 mb-2" htmlFor="time">
+                    <label className="block text-gray-900 mb-2" htmlFor="time">
                       Select Time
                     </label>
                     <select
@@ -563,8 +423,8 @@ export default function BookingForm() {
                       value={formData.time}
                       onChange={handleChange}
                       className={`w-full border ${
-                        formErrors.time ? "border-red-500" : "border-gray-300"
-                      } rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all`}
+                        formErrors.time ? "border-red-500" : "border-amber-300"
+                      } rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all`}
                     >
                       <option value="">Choose a time</option>
                       {timeSlots.map((time) => (
@@ -581,9 +441,9 @@ export default function BookingForm() {
                   </div>
 
                   {/* Additional Comments */}
-                  <div className="md:col-span-2 pt-4 border-t border-gray-100">
+                  <div className="md:col-span-2 pt-4 border-t border-amber-100">
                     <label
-                      className="block text-gray-700 mb-2"
+                      className="block text-amber-700 mb-2"
                       htmlFor="message"
                     >
                       Additional Comments (Optional)
@@ -594,7 +454,7 @@ export default function BookingForm() {
                       value={formData.message}
                       onChange={handleChange}
                       rows="4"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-black transition-all"
+                      className="w-full border border-amber-300 rounded-lg px-4 py-3 outline-none focus:ring-1 focus:ring-amber-500 transition-all"
                       placeholder="Any special requests or additional information we should know..."
                     ></textarea>
                   </div>
@@ -604,7 +464,7 @@ export default function BookingForm() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full bg-black text-white py-3 px-6 rounded-lg font-medium transition-all transform hover:bg-gray-800 ${
+                      className={`w-full bg-amber-600 text-white py-3 px-6 rounded-lg font-medium transition-all transform hover:bg-amber-700 ${
                         isSubmitting ? "opacity-75" : ""
                       }`}
                     >
@@ -625,7 +485,7 @@ export default function BookingForm() {
             className="lg:col-span-4"
           >
             <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full">
-              <div className="bg-black text-white p-6 flex items-center">
+              <div className="bg-amber-600 text-white p-6 flex items-center">
                 <FaCalendarAlt className="text-2xl mr-4" />
                 <h3 className="text-xl font-bold">Booking Info</h3>
               </div>
@@ -633,20 +493,22 @@ export default function BookingForm() {
               <div className="p-6">
                 <div className="mb-6">
                   <div className="flex items-center mb-3">
-                    <FaClock className="text-black mr-3" />
-                    <h4 className="font-semibold text-lg">Business Hours</h4>
+                    <FaClock className="text-amber-600 mr-3" />
+                    <h4 className="font-semibold text-lg text-amber-800">
+                      Business Hours
+                    </h4>
                   </div>
                   <div className="ml-8 space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-600">Monday - Friday</span>
+                      <span className="text-gray-900">Monday - Friday</span>
                       <span className="font-medium">9:00 AM - 8:00 PM</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-600">Saturday</span>
+                      <span className="text-gray-900">Saturday</span>
                       <span className="font-medium">9:00 AM - 8:00 PM</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-600">Sunday</span>
+                      <span className="text-gray-900">Sunday</span>
                       <span className="font-medium">10:00 AM - 6:00 PM</span>
                     </div>
                   </div>
@@ -654,8 +516,10 @@ export default function BookingForm() {
 
                 <div className="mb-6">
                   <div className="flex items-center mb-3">
-                    <FaCut className="text-black mr-3" />
-                    <h4 className="font-semibold text-lg">Our Services</h4>
+                    <FaCut className="text-amber-600 mr-3" />
+                    <h4 className="font-semibold text-lg text-amber-800">
+                      Our Services
+                    </h4>
                   </div>
                   <div className="ml-8 space-y-2">
                     {services.map((service) => (
@@ -663,19 +527,19 @@ export default function BookingForm() {
                         key={service.id}
                         className="flex justify-between items-center"
                       >
-                        <span className="text-gray-600">{service.name}</span>
+                        <span className="text-gray-900">{service.name}</span>
                         <span className="font-medium">{service.price}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
-                  <h4 className="font-semibold mb-2 flex items-center">
-                    <Scissors className="w-4 h-4 mr-2" />
+                <div className="bg-gray-100 p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold mb-2 flex items-center text-amber-800">
+                    <Scissors className="w-4 h-4 mr-2 text-amber-600" />
                     Booking Policy
                   </h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-gray-900 space-y-2">
                     <li>
                       • Please arrive 5-10 minutes before your appointment
                     </li>

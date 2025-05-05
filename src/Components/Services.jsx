@@ -5,25 +5,25 @@ import { Link } from "react-router-dom";
 const services = {
   Featured: [
     {
-      name: "Precision Line Up",
+      name: "Line Up / shape up",
       price: "₵25",
       description:
         "Master-crafted edge definition that highlights your best features. Our barbers use traditional techniques for razor-sharp precision.",
     },
     {
-      name: "Beard Sculpting",
+      name: "Beard Trim ",
       price: "₵40",
       description:
         "Transform your facial hair with our premium beard styling service. Expertly shaped and defined for a distinguished gentleman's look.",
     },
     {
-      name: "Young Gentleman's Cut",
+      name: "Kids Haircut",
       price: "₵50",
       description:
         "Start them young with style. Our kid-friendly approach ensures comfort while delivering age-appropriate cuts that parents love.",
     },
     {
-      name: "Signature Fade",
+      name: "Taper Fade",
       price: "₵60",
       description:
         "Our most requested service. Experience a flawless blend from skin to length, customized to complement your face shape and style.",
@@ -37,13 +37,13 @@ const services = {
   ],
   Waves: [
     {
-      name: "Classic Wave Pattern",
-      price: "₵1000",
+      name: "For The Classic Men",
+      price: "₵100",
       description:
-        "Achieve that perfect 360° wave pattern. Our multi-session technique creates deep, defined waves that turn heads.",
+        "men who want to achieve a classic look with a modern twist. This service includes a detailed consultation to ensure the perfect style for your face shape and hair type.",
     },
     {
-      name: "Textured Waves",
+      name: "For The Modern women",
       price: "₵70",
       description:
         "Custom wave styling that works with your natural texture. Ideal for creating movement and dimension in various hair types.",
@@ -57,19 +57,19 @@ const services = {
         "Premium blonde transformation with careful attention to tone and hair health. Includes treatment to maintain strength and shine.",
     },
     {
-      name: "Complete Color Transformation",
+      name: "Black dye",
       price: "₵100",
       description:
-        "From preparation to final styling, this service delivers bold, head-turning color that expresses your unique personality.",
+        "Rich, deep black that enhances your natural color. Our formula is designed to provide maximum coverage while maintaining hair health.",
     },
+    // {
+    //   name: "Rich Noir",
+    //   price: "₵100",
+    //   description:
+    //     "Deep, luxurious black that adds dimension and shine. Our formula ensures natural-looking results with maximum coverage.",
+    // },
     {
-      name: "Rich Noir",
-      price: "₵100",
-      description:
-        "Deep, luxurious black that adds dimension and shine. Our formula ensures natural-looking results with maximum coverage.",
-    },
-    {
-      name: "Platinum Experience",
+      name: "White dye",
       price: "₵250",
       description:
         "The ultimate statement look. Our careful process achieves stunning white or platinum tones while protecting your hair.",
@@ -77,10 +77,17 @@ const services = {
   ],
   "Home Service": [
     {
-      name: "Elite Home Experience",
+      name: "Elite  Experience",
+      price: "₵300",
+      description:
+        "Bring the barbershop to you. Our master barbers deliver the full Hazard Kutz experience in the comfort and privacy of your home.",
+    },
+
+    {
+      name: "Family Package",
       price: "₵500",
       description:
-        "Bring the barbershop to you. Our master barbers deliver the full Harzad Cutz experience in the comfort and privacy of your home.",
+        "Perfect for families or groups. Enjoy premium haircuts and grooming services for up to four people, all in the comfort of your home.",
     },
   ],
 };

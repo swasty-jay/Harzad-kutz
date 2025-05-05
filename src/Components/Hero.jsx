@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import barber1 from "../assets/barber-1.jpg"; // main image
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,10 +59,10 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="max-w-lg text-lg text-gray-300 mb-8"
+          className="max-w-lg text-lg text-gray-300 mb-8 font-[inter]"
         >
-          Premium cuts and classic grooming traditions meet modern style at
-          Harzad Cutz. Our master barbers deliver precision, comfort, and
+          Premium Kutz and classic grooming traditions meet modern style at
+          Hazard Kutz. Our master barbers deliver precision, comfort, and
           confidence with every visit.
         </motion.p>
 
@@ -76,14 +77,14 @@ function HeroSection() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-amber-400 text-black font-bold uppercase tracking-wide rounded-sm hover:bg-amber-300 transition-colors duration-300"
           >
-            Book Now
+            <Link to="/booking">Book Now</Link>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 border-2 border-white text-white font-bold uppercase tracking-wide rounded-sm hover:bg-white/10 transition-colors duration-300"
           >
-            Our Services
+            <Link to="/services">Our Services</Link>
           </motion.button>
         </motion.div>
       </div>

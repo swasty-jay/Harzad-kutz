@@ -146,7 +146,7 @@ export default function BarberGallery() {
         >
           Explore our collection of premium cuts and styles. Each image
           showcases the precision, creativity, and craftsmanship that define the
-          Harzad Cutz experience.
+          Hazard Kutz experience.
         </motion.p>
       </div>
 

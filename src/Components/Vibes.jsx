@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 // Barber-themed corner decoration component
 const CornerDecoration = ({ position = "top-left" }) => {
   // Determine styling based on position
@@ -140,10 +140,10 @@ export default function VibeSection() {
           <div className="text-start">
             <p className="text-[15px] md:text-[18px] leading-relaxed text-black font-[inter] italic">
               At{" "}
-              <span className="text-amber-400 font-semibold uppercase italic">
-                Hazard Cutz
-              </span>
-              , we blend sharp style with top-tier service. Whether it's a fresh
+              <span className="text-gray-950 font-[inter] text-sm uppercase italic ring-1 ring-yellow-200 ring-offset-0.5  rounded-none px-2 py-0.5  animate-pulse">
+                Hazard Kutz Barbershop
+              </span>{" "}
+              ,we blend sharp style with top-tier service. Whether it's a fresh
               fade, a beard trim, or a full transformation, our skilled barbers
               craft every cut with precision and passion. More than a haircut —
               it's an experience built on good vibes, good music, and real
@@ -175,7 +175,7 @@ export default function VibeSection() {
           whileTap={{ scale: 0.95 }}
           className="bg-amber-400 text-white px-6 py-2 rounded-lg shadow-md hover:bg-amber-500 transition"
         >
-          Book Now
+          <Link to="/booking"> Book Now </Link>
         </motion.button>
 
         <hr className="my-10 border-amber-400 border-[0.05rem]" />
