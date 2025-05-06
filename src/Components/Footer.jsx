@@ -86,7 +86,7 @@ const Footer = () => {
           >
             <img src={logo} alt="Harzad Cutz" className="w-32 mb-4" />
             <p className="text-gray-400 text-sm mt-4 text-center md:text-left">
-              Since 2010, Harzad Cutz has been delivering premium grooming
+              Since 2024, Hazard Kutz has been delivering premium grooming
               services with precision and style.
             </p>
           </motion.div>
@@ -174,7 +174,7 @@ const Footer = () => {
                   href="tel:+233555123456"
                   className="text-gray-300 hover:text-amber-400 transition-colors"
                 >
-                  +233 555 123 456
+                  +233 5555555555555
                 </a>
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
@@ -183,7 +183,7 @@ const Footer = () => {
                   href="mailto:info@harzadcutz.com"
                   className="text-gray-300 hover:text-amber-400 transition-colors"
                 >
-                  info@harzadcutz.com
+                  hazardkutzbarbershop@gmail.com
                 </a>
               </li>
             </ul>
@@ -197,12 +197,12 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <span className="inline-block px-4 py-1 text-xs font-medium tracking-widest text-amber-300 uppercase border border-amber-400">
-                Est. 2010
+                Est. 2024
               </span>
             </div>
             <p className="text-sm text-gray-400">
               &copy; {currentYear}{" "}
-              <span className="text-amber-400">Harzad Cutz</span>. All rights
+              <span className="text-amber-400">Hazard Kutz</span>. All rights
               reserved.
             </p>
           </div>
