@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import logo from "../assets/logo.jpg";
 import {
   FaInstagram,
-  FaFacebookF,
-  FaTwitter,
+  // FaFacebookF,
+  FaTiktok,
   FaMapMarkerAlt,
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,9 +59,15 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             {[
-              { Icon: FaInstagram, href: "#" },
-              { Icon: FaFacebookF, href: "#" },
-              { Icon: FaTwitter, href: "#" },
+              {
+                Icon: FaInstagram,
+                href: "https://www.instagram.com/hazard_kutz_barbershop?igsh=MW9rNThicXgwd2h3&utm_source=qr",
+              },
+              // { Icon: FaFacebookF, href: "facebook.com" },
+              {
+                Icon: FaTiktok,
+                href: "https://www.tiktok.com/@hazardkutz?_t=ZS-8vzjYp7RS1i&_r=1",
+              },
             ].map((social, index) => (
               <motion.a
                 key={index}
@@ -103,19 +110,18 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 text-center md:text-left">
               {[
-                "Services",
-                "Gallery",
-                "About Us",
-                "Book Appointment",
-                "Shop",
-              ].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
+                { label: "Services", path: "/services" },
+                { label: "Gallery", path: "/gallery" },
+                { label: "About", path: "/about" },
+                { label: "Booking", path: "/booking" },
+              ].map(({ label, path }) => (
+                <li key={label}>
+                  <Link
+                    to={path}
                     className="text-gray-300 hover:text-amber-400 transition duration-300"
                   >
-                    {link}
-                  </a>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -133,15 +139,10 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 text-center md:text-left">
               <li className="flex flex-col md:flex-row md:justify-between w-full">
-                <span className="text-gray-300 font-medium">
-                  Monday - Friday
-                </span>
-                <span className="text-gray-400">9:00am - 7:00pm</span>
+                <span className="text-gray-300 font-medium">Mon-Sat</span> {""}
+                <span className="text-gray-400 ml-1 ">9:00am - 8:30pm</span>
               </li>
-              <li className="flex flex-col md:flex-row md:justify-between w-full">
-                <span className="text-gray-300 font-medium">Saturday</span>
-                <span className="text-gray-400">9:00am - 5:00pm</span>
-              </li>
+
               <li className="flex flex-col md:flex-row md:justify-between w-full">
                 <span className="text-gray-300 font-medium">Sunday</span>
                 <span className="text-gray-400">Closed</span>
@@ -163,25 +164,27 @@ const Footer = () => {
               <li className="flex items-center gap-3 justify-center md:justify-start">
                 <FaMapMarkerAlt className="text-amber-400" />
                 <div>
-                  <p className="text-gray-300">ATOMIC DOWN</p>
-                  <p className="text-gray-400">ST JOHNS-DOME-KWABENYA</p>
-                  <p className="text-gray-400">BREKUSU RD</p>
+                  {/* <p className="text-gray-300">ATOMIC DOWN</p> */}
+                  <p className="text-gray-400 text-[12px]">
+                    ST JOHNS-DOME-KWABENYA
+                  </p>
+                  <p className="text-gray-400 text-[12px]">GREATER ACCRA</p>
                 </div>
               </li>
-              <li className="flex items-center gap-3 justify-center md:justify-start">
+              <li className="flex items-center gap-2 justify-center md:justify-start">
                 <FaPhone className="text-amber-400" />
                 <a
-                  href="tel:+233555123456"
-                  className="text-gray-300 hover:text-amber-400 transition-colors"
+                  href="tel:+233559891727"
+                  className="text-gray-300 hover:text-amber-400 transition-colors mt-0 text-[14px]"
                 >
-                  +233 5555555555555
+                  (+233) 0559891727
                 </a>
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
                 <FaEnvelope className="text-amber-400" />
                 <a
                   href="mailto:info@harzadcutz.com"
-                  className="text-gray-300 hover:text-amber-400 transition-colors"
+                  className="text-gray-300 hover:text-amber-400 transition-colors text-[14px]"
                 >
                   hazardkutzbarbershop@gmail.com
                 </a>

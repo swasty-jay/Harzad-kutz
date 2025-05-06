@@ -137,16 +137,16 @@ export default function NavBar() {
             >
               <div className="px-3 py-2 border-b border-gray-200">
                 <span className="text-sm font-semibold text-gray-800">
-                  Navigation
+                  Hazard Kutz
                 </span>
               </div>
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="flex items-center px-3 py-2.5 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
                 onClick={() => setMenuOpen(false)}
               >
                 Services
-              </a>
+              </Link>
               <Link
                 to="/about"
                 className="flex items-center px-3 py-2.5 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
@@ -154,13 +154,13 @@ export default function NavBar() {
               >
                 About
               </Link>
-              <a
-                href="#gallery"
+              <Link
+                to="/gallery"
                 className="flex items-center px-3 py-2.5 text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
                 onClick={() => setMenuOpen(false)}
               >
                 Gallery
-              </a>
+              </Link>
             </div>
           </div>
         </div>

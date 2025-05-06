@@ -22,7 +22,7 @@ export default function BookingForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const services = [
-    { id: "haircut", name: "Haircut", price: "₵200" },
+    { id: "Duo experience", name: "Haircut", price: "₵100" },
     { id: "fade", name: "Taper Fade", price: "₵60" },
     // { id: "fade", name: "Taper Fade", price: "3,000" },
     { id: "beard", name: "Beard Trim", price: "₵40" },
@@ -512,16 +512,13 @@ export default function BookingForm() {
                   </div>
                   <div className="ml-8 space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-900">Monday - Friday</span>
-                      <span className="font-medium">9:00 AM - 8:00 PM</span>
+                      <span className="text-gray-900">MON - SAT</span>
+                      <span className="font-medium">9:00 AM - 8:30 PM</span>
                     </div>
+
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-900">Saturday</span>
-                      <span className="font-medium">9:00 AM - 8:00 PM</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-900">Sunday</span>
-                      <span className="font-medium">10:00 AM - 6:00 PM</span>
+                      <span className="text-gray-900">SUNDAY</span>
+                      <span className="font-medium">2:30 PM - 9:00 PM</span>
                     </div>
                   </div>
                 </div>
@@ -556,7 +553,7 @@ export default function BookingForm() {
                       • Please arrive 5-10 minutes before your appointment
                     </li>
                     <li>
-                      • Cancellations should be made at least 4 hours in advance
+                      • Cancellations should be made at least 3 hours in advance
                     </li>
                     <li>• Late arrivals may result in reduced service time</li>
                   </ul>

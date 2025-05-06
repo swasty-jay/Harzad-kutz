@@ -261,7 +261,7 @@ const AboutSection = memo(function AboutSection() {
     lat: 5.739465,
     lng: -0.237222,
     address: "St Johns - Dome - Kwabenya",
-    city: "Greater Accra, Dome - Kwabenya",
+    city: "Greater Accra",
   };
 
   const mapContainerRef = useRef(null);
@@ -292,7 +292,7 @@ const AboutSection = memo(function AboutSection() {
 
       const map = window.L.map(mapContainerRef.current).setView(
         [mapCoordinates.lat, mapCoordinates.lng],
-        12
+        11
       );
 
       window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -302,7 +302,7 @@ const AboutSection = memo(function AboutSection() {
 
       window.L.marker([mapCoordinates.lat, mapCoordinates.lng])
         .addTo(map)
-        .bindPopup(`<b>Hazard kutz</b><br>${mapCoordinates.city}`)
+        .bindPopup(`<b>Hazard kutz</b><br>${mapCoordinates.address}`)
         .openPopup();
 
       window.L.circle([mapCoordinates.lat, mapCoordinates.lng], {
@@ -421,8 +421,24 @@ const AboutSection = memo(function AboutSection() {
                     <h4 className="font-semibold mb-1 text-amber-800">
                       Contact Us
                     </h4>
-                    <p className="text-sm text-gray-700">+233 20 123 4567</p>
-                    <p className="text-sm text-gray-700">info@hazardcutz.com</p>
+                    <div>
+                      <p className="text-sm text-gray-700">
+                        <a
+                          href="tel:+233201234567"
+                          className="hover:text-amber-500 underline"
+                        >
+                          Call Us
+                        </a>
+                      </p>
+                      <p className="text-sm text-gray-700">
+                        <a
+                          href="mailto:hazardkutzbarbershop@gmail.com"
+                          className="hover:text-amber-500 underline"
+                        >
+                          Email Us
+                        </a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -482,14 +498,14 @@ const AboutSection = memo(function AboutSection() {
                     >
                       Get Directions (Google)
                     </a>
-                    <a
+                    {/* <a
                       href={`https://www.waze.com/ul?ll=${mapCoordinates.lat}%2C${mapCoordinates.lng}&navigate=yes`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                     >
                       Navigate with Waze
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

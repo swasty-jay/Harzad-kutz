@@ -154,7 +154,7 @@ function Services() {
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-xl font-[poppins] text-white">
+                  <h3 className="text-xl font-semibold text-white">
                     {service.name}
                   </h3>
                   <span className="text-amber-400 text-xl font-bold">
