@@ -8,10 +8,14 @@ import Services from "./Components/Services";
 import Gallry from "./Components/Gallary";
 import NotFoundPage from "./Pages/NotFound";
 import AboutSection from "./Pages/About";
+import ScrollToTop from "./Components/ScrollToTop";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
+      <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />

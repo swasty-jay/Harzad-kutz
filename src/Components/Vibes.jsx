@@ -116,7 +116,7 @@ export default function VibeSection() {
         viewport={{ once: true }}
         className="max-w-4xl mx-auto"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#1A1A1A] font-[poppins] italic">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-amber-400 font-[poppins] italic">
           The Vibe
         </h2>
 
@@ -138,29 +138,16 @@ export default function VibeSection() {
           </div>
 
           <div className="text-start">
-            <p className="text-[15px] md:text-[18px] leading-relaxed text-black font-[inter] italic">
-              At{" "}
-              <span className="text-gray-950 font-[inter] text-sm uppercase italic ring-1 ring-yellow-200 ring-offset-0.5  rounded-none px-2 py-0.5  animate-pulse">
-                Hazard Kutz Barbershop
-              </span>{" "}
-              ,we blend sharp style with top-tier service. Whether it's a fresh
-              fade, a beard trim, or a full transformation, our skilled barbers
-              craft every cut with precision and passion. More than a haircut —
-              it's an experience built on good vibes, good music, and real
-              conversations. Step into our world and leave feeling your absolute
-              best.
-            </p>
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
               className="mt-8 text-sm md:text-[17px] text-[#6B7280] font-[inter] italic leading-relaxed"
             >
-              "No be only haircut we dey do, we dey make sure say you go feel
-              relaxed and fresh after your session. Come make we reason small,
-              jam to some tunes, and let's get you looking sharp like never
-              before."
+              For Hazard Kutz Barbershop, we no just dey barb — we dey give you
+              full vibe. Clean fade, sharp trim, good music plus better convo.
+              Just come relax, chill small, make we run you sharp sharp. You go
+              step out fresh pass!
             </motion.p>
           </div>
 

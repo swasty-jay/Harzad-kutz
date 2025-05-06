@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaCalendarAlt, FaCut, FaClock } from "react-icons/fa";
 import { Scissors, Check } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
@@ -20,7 +21,6 @@ export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  //  ₵
   const services = [
     { id: "haircut", name: "Haircut", price: "₵200" },
     { id: "fade", name: "Taper Fade", price: "₵60" },
@@ -34,7 +34,7 @@ export default function BookingForm() {
 
   const barbers = [
     { id: "emmanuel", name: "Emmanuel" },
-    // { id: "mike", name: "Mike" },
+    { id: "mike", name: "Mike" },
     // { id: "dave", name: "Dave" },
   ];
 
@@ -125,10 +125,10 @@ export default function BookingForm() {
       // Send email using EmailJS
       emailjs
         .send(
-          "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-          "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+          "service_8wx6qy7", // Replace with your EmailJS service ID
+          "template_3vceqrb", // Replace with your EmailJS template ID
           emailData,
-          "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+          "o51dHNuIWoCqdooiR" // Replace with your EmailJS public key
         )
         .then(() => {
           setIsSubmitting(false);
@@ -154,9 +154,7 @@ export default function BookingForm() {
         .catch((error) => {
           console.error("Email sending failed:", error);
           setIsSubmitting(false);
-          alert(
-            "There was an error sending your booking. Please try again or contact us directly."
-          );
+          toast.error("Oops! Something went wrong. Please try again.");
         });
     }
   };
@@ -210,24 +208,38 @@ export default function BookingForm() {
               </div>
 
               {isSubmitted ? (
-                <div className="p-8 flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-4">
-                    <Check className="text-amber-600 w-8 h-8" />
-                  </div>
-                  <h4 className="text-xl font-bold text-gray-800 mb-2">
-                    Booking Confirmed!
-                  </h4>
-                  <p className="text-gray-600 text-center mb-4">
-                    We've received your appointment request and will send you a
-                    confirmation shortly.
-                  </p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="text-amber-600 underline hover:text-amber-700 transition-colors"
-                  >
-                    Make another booking
-                  </button>
-                </div>
+                // <div className="p-8 flex flex-col items-center justify-center">
+                //   <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mb-4">
+                //     <Check className="text-amber-600 w-8 md:w-10 h-8 md:h-10" />
+                //   </div>
+                //   <h4 className="text-xl font-bold text-gray-800 mb-2">
+                //     Booking Confirmed!
+                //   </h4>
+                //   <p className="text-gray-600 text-center mb-4">
+                //     We've received your appointment request and will send you a
+                //     confirmation email shortly.
+                //   </p>
+                //   <button
+                //     onClick={() => setIsSubmitted(false)}
+                //     className="text-amber-600 underline hover:text-amber-700 transition-colors"
+                //   >
+                //     Make another booking
+                //   </button>
+                // </div>
+                toast.success(
+                  "Booking Confirmed! We've received your appointment request and will send you a confirmation email shortly.",
+                  {
+                    duration: 5000,
+                    icon: <Check className="text-amber-600 w-8 h-8" />,
+                    style: {
+                      background: "#fff",
+                      color: "#333",
+                      borderRadius: "10px",
+                      padding: "20px",
+                      fontSize: "16px",
+                    },
+                  }
+                )
               ) : (
                 <form
                   onSubmit={handleSubmit}
