@@ -24,7 +24,6 @@ export default function BookingForm() {
   const services = [
     { id: "Duo experience", name: "Haircut", price: "₵100" },
     { id: "fade", name: "Taper Fade", price: "₵60" },
-    // { id: "fade", name: "Taper Fade", price: "3,000" },
     { id: "beard", name: "Beard Trim", price: "₵40" },
     { id: "family package", name: "Family package", price: "₵500" },
     { id: "elite experience", name: "Elite Experience", price: "₵300" },

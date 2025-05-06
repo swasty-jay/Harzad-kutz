@@ -35,7 +35,7 @@ export default function NavBar() {
                    backdrop-blur-md rounded-xl shadow-lg w-full max-w-4xl mx-auto px-4 py-2 h-14 md:h-16"
       >
         {/* Logo */}
-        <div className="text-lg font-[poppins] md:text-xl italic text-amber-400">
+        <div className="text-lg font-[poppins] md:text-xl italic text-gray-800">
           <Link to={"/"}> Hazard Kutz </Link>
         </div>
 
