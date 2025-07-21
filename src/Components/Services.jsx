@@ -62,12 +62,7 @@ const services = {
       description:
         "Rich, deep black that enhances your natural color. Our formula is designed to provide maximum coverage while maintaining hair health.",
     },
-    // {
-    //   name: "Rich Noir",
-    //   price: "₵100",
-    //   description:
-    //     "Deep, luxurious black that adds dimension and shine. Our formula ensures natural-looking results with maximum coverage.",
-    // },
+
     {
       name: "White dye",
       price: "₵250",

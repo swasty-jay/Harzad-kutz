@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
-body {
-  font-family: "inter", sans-serif;
+.bellefair {
+  font-family: "Bellefair", serif;
   font-weight: 400;
   font-style: normal;
-  background-color: #e5e7eb;
+}
+.cinzel {
+  font-family: "Cinzel", serif;
+  font-weight: 500;
+  font-style: normal;
 }

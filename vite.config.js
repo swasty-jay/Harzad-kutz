@@ -8,8 +8,8 @@ export default defineConfig({
   content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
   theme: {
     fontFamily: {
-      heading: ["Poppins", ...defaultTheme.fontFamily.sans],
-      body: ["Inter", ...defaultTheme.fontFamily.sans],
+      heading: ["Cinzel", ...defaultTheme.fontFamily.sans],
+      body: ["Bellefair", ...defaultTheme.fontFamily.sans],
     },
     colors: {
       white: "#FFFFFF",
