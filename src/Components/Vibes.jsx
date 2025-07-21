@@ -116,7 +116,7 @@ export default function VibeSection() {
         viewport={{ once: true }}
         className="max-w-4xl mx-auto"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-amber-400 font-[poppins] italic">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-amber-400 cinzel italic">
           The Vibe
         </h2>
 
@@ -142,7 +142,7 @@ export default function VibeSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
-              className="mt-8 text-sm md:text-[17px] text-[#6B7280] font-[inter] italic leading-relaxed"
+              className="mt-6 text-sm md:text-[18px] text-[#6B7280] bellefair italic text-md leading-relaxed"
             >
               For Hazard Kutz Barbershop, we no just dey barb — we dey give you
               full vibe. Clean fade, sharp trim, good music plus better convo.

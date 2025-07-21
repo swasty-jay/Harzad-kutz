@@ -158,10 +158,10 @@ const AboutSection = memo(function AboutSection() {
                       Working Hours
                     </h4>
                     <p className="text-sm text-gray-700 bellefair">
-                      Mon-Sat: 9am - 8pm
+                      Mon-Sat: 9AM - 8PM
                     </p>
                     <p className="text-sm text-gray-700 bellefair">
-                      Sunday: Closed
+                      Sunday: 2:30 PM - 9:00 PM
                     </p>
                   </div>
                 </div>
