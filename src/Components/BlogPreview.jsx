@@ -119,7 +119,7 @@ export default function BlogPreview() {
                 {/* Read More Link */}
                 <div className="px-6 pb-6">
                   <Link
-                    to={`/blog/${post.id}`}
+                    to={`/blog/`}
                     className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-600 transition-colors duration-300 cinzel text-sm font-semibold"
                   >
                     Read More

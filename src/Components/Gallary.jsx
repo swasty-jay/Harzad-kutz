@@ -167,7 +167,7 @@ export default function BarberGallery() {
   };
 
   return (
-    <div className="gallery-wrapper bg-gradient-to-b from-gray-100 to-gray-200 pt-22 pb-8 px-6">
+    <div className="gallery-wrapper bg-gradient-to-b from-gray-100 to-gray-200 py-6 px-6">
       <div className="text-center mb-16">
         <motion.span
           className="inline-block px-6 py-2 mb-4 cinzel text-sm font-bold tracking-widest text-black uppercase border-2 border-amber-400 bg-white/50 backdrop-blur-sm "
