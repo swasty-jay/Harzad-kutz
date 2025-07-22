@@ -228,7 +228,7 @@ const Footer = () => {
           <div className="mt-4 text-xs text-gray-500 text-left lg:text-center">
             Developed by{" "}
             <a
-              href="https://swastyjay-portfolio-link.com" // Replace with your actual portfolio link
+              href="https://wa.me/+233245870688" // Replace with your actual portfolio link
               target="_blank"
               rel="noopener noreferrer"
               className="text-amber-400 underline hover:text-amber-500 text-base font-[Cinzel]"
