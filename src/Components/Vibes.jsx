@@ -74,7 +74,7 @@ export default function VibeSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-2xl md:text-3xl lg:text-4xl font-bold cinzel text-gray-900 mb-1"
           >
             Experience the <span className="text-amber-400">Difference</span>
           </motion.h2>
@@ -163,9 +163,9 @@ export default function VibeSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <div className="inline-flex items-center gap-8 text-sm text-gray-500">
+          <div className="inline-flex items-center bellefair gap-8 text-[11px] sm:text-sm text-gray-500">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
               <span>Premium Service</span>
             </div>
             <div className="flex items-center gap-2">
@@ -173,7 +173,7 @@ export default function VibeSection() {
               <span>Expert Barbers</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
               <span>Great Vibes</span>
             </div>
           </div>
