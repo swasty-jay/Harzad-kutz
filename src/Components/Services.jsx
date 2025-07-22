@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const services = {
   Featured: [
     {
-      name: "Line Up / shape up",
+      name: "Line Up / Shape Up",
       price: "₵25",
       description:
         "Master-crafted edge definition that highlights your best features. Our barbers use traditional techniques for razor-sharp precision.",
     },
     {
-      name: "Beard Trim ",
+      name: "Beard Trim",
       price: "₵40",
       description:
         "Transform your facial hair with our premium beard styling service. Expertly shaped and defined for a distinguished gentleman's look.",
@@ -32,7 +31,7 @@ const services = {
       name: "Duo Experience",
       price: "₵100",
       description:
-        "Bring a friend and save. Two premium cuts with the same attention to detail and style that Harzad Cutz is known for.",
+        "Bring a friend and save. Two premium cuts with the same attention to detail and style that Hazard Kutz is known for.",
     },
   ],
   Waves: [
@@ -40,10 +39,10 @@ const services = {
       name: "For The Classic Men",
       price: "₵100",
       description:
-        "men who want to achieve a classic look with a modern twist. This service includes a detailed consultation to ensure the perfect style for your face shape and hair type.",
+        "Men who want to achieve a classic look with a modern twist. This service includes a detailed consultation to ensure the perfect style for your face shape and hair type.",
     },
     {
-      name: "For The Modern women",
+      name: "For The Modern Women",
       price: "₵70",
       description:
         "Custom wave styling that works with your natural texture. Ideal for creating movement and dimension in various hair types.",
@@ -57,14 +56,13 @@ const services = {
         "Premium blonde transformation with careful attention to tone and hair health. Includes treatment to maintain strength and shine.",
     },
     {
-      name: "Black dye",
+      name: "Black Dye",
       price: "₵100",
       description:
         "Rich, deep black that enhances your natural color. Our formula is designed to provide maximum coverage while maintaining hair health.",
     },
-
     {
-      name: "White dye",
+      name: "White Dye",
       price: "₵250",
       description:
         "The ultimate statement look. Our careful process achieves stunning white or platinum tones while protecting your hair.",
@@ -72,12 +70,11 @@ const services = {
   ],
   "Home Service": [
     {
-      name: "Elite  Experience",
+      name: "Elite Experience",
       price: "₵300",
       description:
         "Bring the barbershop to you. Our master barbers deliver the full Hazard Kutz experience in the comfort and privacy of your home.",
     },
-
     {
       name: "Family Package",
       price: "₵500",
@@ -93,16 +90,16 @@ function Services() {
   const [activeTab, setActiveTab] = useState("Featured");
 
   return (
-    <div className="max-w-6xl mx-auto pt-22 pb-2 px-6 bg-gray-800">
-      <div className="text-center mb-6 md:mb-12">
-        <span className="inline-block px-4 py-1 mb-4 text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400">
+    <div className="max-w-6xl mx-auto pt-20 pb-16 px-6 bg-gray-900">
+      <div className="text-center mb-12">
+        <span className="inline-block px-4 py-1 mb-4 cinzel text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400">
           Our Services
         </span>
-        <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">
+        <h2 className="text-3xl md:text-5xl font-bold cinzel text-white mb-4">
           Premium Grooming
         </h2>
-        <div className="w-24 h-1 bg-amber-400 mx-auto mb-4 md:mb-6"></div>
-        <p className="text-gray-300 text-sm md:text-[18px] max-w-2xl mx-auto">
+        <div className="w-24 h-1 bg-amber-400 mx-auto mb-6 rounded-full"></div>
+        <p className="text-gray-300 text-lg max-w-2xl mx-auto bellefair leading-relaxed">
           Discover our range of expert services designed to enhance your style
           and confidence. Each service is performed by our master barbers with
           precision and care.
@@ -110,18 +107,18 @@ function Services() {
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center gap-3 md:gap-4 mb-6 md:mb-8 flex-wrap">
+      <div className="flex justify-center gap-4 mb-10 flex-wrap">
         {tabs.map((tab) => (
           <motion.button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`px-3 py-1 text-[10px] md:text-[14px] font-medium tracking-wide uppercase transition-all duration-300 ${
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className={`px-6 py-3 text-sm font-semibold cinzel tracking-wide uppercase transition-all duration-300 rounded-lg ${
               activeTab === tab
-                ? "bg-amber-400 text-black"
-                : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-400"
-            } rounded-sm`}
+                ? "bg-amber-400 text-black shadow-lg"
+                : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-400"
+            }`}
           >
             {tab}
           </motion.button>
@@ -132,48 +129,45 @@ function Services() {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {services[activeTab].map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-gray-800 rounded-sm shadow-lg border border-gray-700 overflow-hidden relative"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              className="bg-gray-800 rounded-lg shadow-xl border border-gray-700 overflow-hidden relative hover:border-amber-400/50 transition-all duration-300"
             >
-              <div className="p-6">
+              <div className="p-8">
                 <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-xl font-bold cinzel text-white">
                     {service.name}
                   </h3>
-                  <span className="text-amber-400 text-xl font-bold">
+                  <span className="text-amber-400 text-2xl cinzel font-bold">
                     {service.price}
                   </span>
                 </div>
 
-                <div className="h-px w-full bg-gray-700 mb-4"></div>
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-6"></div>
 
-                <p className="text-gray-300 text-sm mb-14">
+                <p className="text-gray-300 text-lg bellefair leading-relaxed mb-8">
                   {service.description}
                 </p>
 
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   className="absolute bottom-6 right-6"
                 >
-                  <Link
-                    to="/booking"
-                    className="inline-block bg-amber-400 text-black font-bold uppercase tracking-wide text-xs py-2 px-5 rounded-sm hover:bg-amber-300 transition-colors duration-300"
-                  >
+                  <button className="bg-amber-400 text-black font-bold uppercase tracking-wide text-xs py-3 px-6 rounded-lg hover:bg-amber-300 transition-all duration-300 shadow-lg hover:shadow-amber-400/25">
                     Book Now
-                  </Link>
+                  </button>
                 </motion.div>
               </div>
             </motion.div>
