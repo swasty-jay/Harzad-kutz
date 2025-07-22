@@ -40,11 +40,15 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight"
+          className="text-4xl md:text-4xl font-bold text-white mb-4 cinzel tracking-tight"
         >
-          <span className="block text-3xl md:text-6xl">MASTER THE</span>
-          <span className="text-amber-400 italic block text-4xl md:text-7xl">
-            CRAFT OF STYLE
+          <span className="block text-4xl md:text-6xl font-extrabold">
+            {" "}
+            Hazard Kutz
+          </span>
+          <span className="text-amber-400 italic block text-3xl md:text-4xl">
+            {/* <span className="text-2xl"> Own Your Style.</span> <br /> */}
+            Master Your Look.
           </span>
         </motion.h1>
 
@@ -52,18 +56,18 @@ function HeroSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-24 h-1 bg-amber-400 my-6"
+          className="w-24 h-1 bg-amber-400 my-2"
         />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="max-w-lg text-lg text-gray-300 mb-8 font-[inter]"
+          className="max-w-lg text-lg sm:text-xl text-gray-400 mb-8 bellefair tracking-wide"
         >
-          Premium Kutz and classic grooming traditions meet modern style at
-          Hazard Kutz. Our master barbers deliver precision, comfort, and
-          confidence with every visit.
+          Precision kutz and refined grooming for men and boys designed to leave
+          a lasting impression. Located near Atomic Junction, Gateway Hotel,
+          Dome-Kwabenya.
         </motion.p>
 
         <motion.div
@@ -75,14 +79,14 @@ function HeroSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-amber-400 text-black font-bold uppercase tracking-wide rounded-sm hover:bg-amber-300 transition-colors duration-300"
+            className="px-8 py-4 bg-amber-400 text-black font-bold uppercase cinzel tracking-wide rounded-sm hover:bg-amber-300 transition-colors duration-300"
           >
             <Link to="/booking">Book Now</Link>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-white text-white font-bold uppercase tracking-wide rounded-sm hover:bg-white/10 transition-colors duration-300"
+            className="px-8 py-4 border-2 border-white text-white cinzel font-bold uppercase tracking-wide rounded-sm hover:bg-white/10 transition-colors duration-300"
           >
             <Link to="/services">Our Services</Link>
           </motion.button>

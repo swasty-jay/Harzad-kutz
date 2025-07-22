@@ -201,16 +201,16 @@ export default function NavBar() {
   return (
     <>
       {/* Desktop NavBar - Sticky */}
-      <div className="hidden md:block w-full bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-40">
-        <div className="max-w-6xl mx-auto px-4 py-4">
+      <div className="hidden md:block w-full bg-white/75 backdrop-blur-sm shadow-sm rounded-sm sticky top-0 z-40">
+        <div className="max-w-6xl mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="text-xl font-[poppins] italic text-gray-800 font-semibold">
+            <div className="text-2xl cinzel italic text-gray-800 font-bold">
               <Link to={"/"}> Hazard Kutz </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-8 text-lg cinzel">
               <Link
                 to="/services"
                 className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
@@ -237,21 +237,21 @@ export default function NavBar() {
                 href="https://wa.me/+233559891727"
                 className="text-gray-700 hover:text-green-600 p-2 transition-all duration-200 rounded-lg hover:bg-gray-100"
               >
-                <FaWhatsapp className="w-6 h-6" />
+                <FaWhatsapp className="w-7 h-7" />
               </a>
 
               <a
                 href="https://www.instagram.com/hazard_kutz_barbershop?igsh=MW9rNThicXgwd2h3&utm_source=qr"
                 className="text-gray-700 hover:text-pink-600 p-2 transition-all duration-200 rounded-lg hover:bg-gray-100"
               >
-                <FaInstagram className="w-6 h-6" />
+                <FaInstagram className="w-7 h-7" />
               </a>
 
               <a
                 href="https://www.tiktok.com/@hazardkutz?_t=ZS-8vzjYp7RS1i&_r=1"
                 className="text-gray-700 hover:text-black p-2 transition-all duration-200 rounded-lg hover:bg-gray-100"
               >
-                <FaTiktok className="w-6 h-6" />
+                <FaTiktok className="w-7 h-7" />
               </a>
             </div>
           </div>
@@ -262,7 +262,7 @@ export default function NavBar() {
       <div className="md:hidden fixed top-0 left-0 w-full flex justify-center px-4 py-4 z-50">
         <div className="relative flex items-center justify-between bg-white/20 border border-white/30 backdrop-blur-md rounded-2xl shadow-lg w-full max-w-sm mx-auto px-4 py-3 h-14">
           {/* Mobile Logo */}
-          <div className="text-lg font-[poppins] italic text-gray-800 font-semibold">
+          <div className="text-lg cinzel italic text-gray-800 font-semibold">
             <Link to={"/"}> Hazard Kutz </Link>
           </div>
 
@@ -314,15 +314,14 @@ export default function NavBar() {
                 {/* Dropdown Header */}
                 <div className="px-4 py-3 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-sm font-semibold text-gray-800">
-                      Hazard Kutz Menu
+                    <span className="text-sm font-semibold cinzel text-gray-800">
+                      Hazard Kutz
                     </span>
                   </div>
                 </div>
 
                 {/* Navigation Links */}
-                <div className="py-2">
+                <div className="py-2 text-base bellefair">
                   <Link
                     to="/services"
                     className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-black transition-all duration-200 border-l-4 border-transparent hover:border-gray-800"
@@ -344,30 +343,6 @@ export default function NavBar() {
                   >
                     <span className="font-medium">Gallery</span>
                   </Link>
-                </div>
-
-                {/* Dropdown Footer */}
-                <div className="px-4 py-3 bg-gray-50 border-t border-gray-200">
-                  <div className="flex items-center justify-center space-x-4">
-                    <a
-                      href="https://wa.me/+233559891727"
-                      className="text-green-600 hover:text-green-700 p-1 transition-colors duration-200"
-                    >
-                      <FaWhatsapp className="w-4 h-4" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/hazard_kutz_barbershop?igsh=MW9rNThicXgwd2h3&utm_source=qr"
-                      className="text-pink-600 hover:text-pink-700 p-1 transition-colors duration-200"
-                    >
-                      <FaInstagram className="w-4 h-4" />
-                    </a>
-                    <a
-                      href="https://www.tiktok.com/@hazardkutz?_t=ZS-8vzjYp7RS1i&_r=1"
-                      className="text-gray-800 hover:text-black p-1 transition-colors duration-200"
-                    >
-                      <FaTiktok className="w-4 h-4" />
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>

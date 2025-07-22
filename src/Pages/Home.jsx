@@ -5,7 +5,7 @@ import Gallery from "../Components/Gallary";
 
 const Home = () => {
   return (
-    <div className="relative min-h-80 ">
+    <div className="relative min-h-screen ">
       <HeroSection />
       <Vibes />
       <Services />
