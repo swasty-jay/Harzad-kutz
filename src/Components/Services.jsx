@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = {
   Featured: [
@@ -92,14 +93,14 @@ function Services() {
   return (
     <div className="max-w-6xl mx-auto pt-20 pb-16 px-6 bg-gray-900">
       <div className="text-center mb-12">
-        <span className="inline-block px-4 py-1 mb-4 cinzel text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400">
+        <span className="inline-block px-4 py-1 mb-4 cinzel text-xs sm:text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400">
           Our Services
         </span>
-        <h2 className="text-3xl md:text-5xl font-bold cinzel text-white mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold cinzel text-white mb-4">
           Premium Grooming
         </h2>
         <div className="w-24 h-1 bg-amber-400 mx-auto mb-6 rounded-full"></div>
-        <p className="text-gray-300 text-lg max-w-2xl mx-auto bellefair leading-relaxed">
+        <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto bellefair leading-relaxed">
           Discover our range of expert services designed to enhance your style
           and confidence. Each service is performed by our master barbers with
           precision and care.
@@ -114,7 +115,7 @@ function Services() {
             onClick={() => setActiveTab(tab)}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className={`px-6 py-3 text-sm font-semibold cinzel tracking-wide uppercase transition-all duration-300 rounded-lg ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold cinzel tracking-wide uppercase transition-all duration-300 rounded-lg ${
               activeTab === tab
                 ? "bg-amber-400 text-black shadow-lg"
                 : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-amber-400 hover:text-amber-400"
@@ -146,17 +147,17 @@ function Services() {
             >
               <div className="p-8">
                 <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-xl font-bold cinzel text-white">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold cinzel text-white">
                     {service.name}
                   </h3>
-                  <span className="text-amber-400 text-2xl cinzel font-bold">
+                  <span className="text-amber-400 text-xl sm:text-2xl cinzel font-bold">
                     {service.price}
                   </span>
                 </div>
 
                 <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-6"></div>
 
-                <p className="text-gray-300 text-lg bellefair leading-relaxed mb-8">
+                <p className="text-gray-300 text-sm sm:text-base md:text-lg bellefair leading-relaxed mb-8">
                   {service.description}
                 </p>
 
@@ -165,8 +166,8 @@ function Services() {
                   whileTap={{ scale: 0.98 }}
                   className="absolute bottom-6 right-6"
                 >
-                  <button className="bg-amber-400 text-black font-bold uppercase tracking-wide text-xs py-3 px-6 rounded-lg hover:bg-amber-300 transition-all duration-300 shadow-lg hover:shadow-amber-400/25">
-                    Book Now
+                  <button className="bg-amber-400 text-black font-bold uppercase tracking-wide text-[10px] sm:text-xs py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-amber-300 transition-all duration-300 shadow-lg hover:shadow-amber-400/25">
+                    <Link to="/booking">Book Now</Link>
                   </button>
                 </motion.div>
               </div>

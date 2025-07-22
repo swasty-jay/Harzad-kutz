@@ -36,10 +36,10 @@ function ImageCard({ id, onClick }) {
         initial={{ y: "100%" }}
         whileHover={{ y: 0 }}
       >
-        <p className="text-white text-sm font-medium cinzel mb-1">
+        <p className="text-white text-xs sm:text-sm font-medium cinzel mb-1">
           Premium Style #{id}
         </p>
-        <div className="w-8 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-12"></div>
+        <div className="w-6 sm:w-8 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-10 sm:group-hover:w-12"></div>
       </motion.div>
 
       {/* Corner accent */}
@@ -110,7 +110,7 @@ function Modal({ id, onClose }) {
             transition={{ delay: 0.3 }}
           >
             <div className="bg-black/70 backdrop-blur-sm rounded-lg px-4 py-2 inline-block">
-              <p className="text-white font-medium cinzel">
+              <p className="text-white text-sm sm:text-base font-medium cinzel">
                 Premium Style #{id}
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function BarberGallery() {
     <div className="gallery-wrapper bg-gradient-to-b from-gray-100 to-gray-200 py-6 px-6">
       <div className="text-center mb-16">
         <motion.span
-          className="inline-block px-6 py-2 mb-4 cinzel text-sm font-bold tracking-widest text-black uppercase border-2 border-amber-400 bg-white/50 backdrop-blur-sm "
+          className="inline-block px-4 sm:px-6 py-1.5 sm:py-2 mb-4 cinzel text-xs sm:text-sm font-bold tracking-widest text-black uppercase border-2 border-amber-400 bg-white/50 backdrop-blur-sm "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -179,7 +179,7 @@ export default function BarberGallery() {
         </motion.span>
 
         <motion.h2
-          className="text-5xl md:text-6xl font-bold text-black mb-4 cinzel"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 cinzel"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -188,14 +188,14 @@ export default function BarberGallery() {
         </motion.h2>
 
         <motion.div
-          className="w-32 h-1 bg-gradient-to-r from-amber-400 to-yellow-400 mx-auto mb-8 rounded-full"
+          className="w-24 sm:w-32 h-1 bg-gradient-to-r from-amber-400 to-yellow-400 mx-auto mb-6 sm:mb-8 rounded-full"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.5 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         />
 
         <motion.p
-          className="text-gray-700 max-w-3xl bellefair mx-auto mb-12 text-lg md:text-xl leading-relaxed"
+          className="text-gray-700 max-w-3xl bellefair mx-auto mb-8 sm:mb-12 text-base sm:text-lg md:text-xl leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}

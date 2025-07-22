@@ -44,13 +44,13 @@ const Footer = () => {
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="inline-block px-4 py-1 mb-4 text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400 font-[Cinzel]">
+            <span className="inline-block px-4 py-1 mb-4 text-xs sm:text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400 font-[Cinzel]">
               Connect With Us
             </span>
           </motion.div>
 
           <motion.h2
-            className="text-4xl font-bold mb-4 text-white font-[Cinzel]"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white font-[Cinzel]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -106,7 +106,7 @@ const Footer = () => {
               alt="Harzad Cutz"
               className="w-32 mb-4 rounded-lg shadow-lg"
             />
-            <p className="text-gray-400 text-base mt-2 font-[Bellefair] max-w-xs">
+            <p className="text-gray-400 text-sm sm:text-base mt-2 font-[Bellefair] max-w-xs">
               Since 2024, Hazard Kutz has been delivering premium grooming
               services with precision and style.
             </p>
@@ -119,7 +119,7 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 1.1 }}
             className="flex flex-col items-start text-left"
           >
-            <h3 className="text-amber-400 font-bold text-lg mb-6 font-[Cinzel] tracking-wide">
+            <h3 className="text-amber-400 font-bold text-base sm:text-lg mb-4 sm:mb-6 font-[Cinzel] tracking-wide">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -132,7 +132,7 @@ const Footer = () => {
                 <li key={label}>
                   <Link
                     to={path}
-                    className="text-gray-300 hover:text-amber-400 transition duration-300 font-[Bellefair] text-base"
+                    className="text-gray-300 hover:text-amber-400 transition duration-300 font-[Bellefair] text-sm sm:text-base"
                   >
                     {label}
                   </Link>
@@ -148,10 +148,10 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex flex-col items-start text-left"
           >
-            <h3 className="text-amber-400 font-bold text-lg mb-6 font-[Cinzel] tracking-wide">
+            <h3 className="text-amber-400 font-bold text-base sm:text-lg mb-4 sm:mb-6 font-[Cinzel] tracking-wide">
               Business Hours
             </h3>
-            <ul className="space-y-3 font-[Bellefair] text-base">
+            <ul className="space-y-3 font-[Bellefair] text-sm sm:text-base">
               <li className="flex flex-col sm:flex-row sm:justify-between w-full">
                 <span className="text-gray-300 font-medium">Mon-Sat:</span>
                 <span className="text-gray-400 ml-1">9:00AM - 8:30PM</span>
@@ -170,17 +170,17 @@ const Footer = () => {
             transition={{ duration: 0.8, delay: 1.3 }}
             className="flex flex-col items-start text-left w-full"
           >
-            <h3 className="text-amber-400 font-bold text-lg mb-6 font-[Cinzel] tracking-wide">
+            <h3 className="text-amber-400 font-bold text-base sm:text-lg mb-4 sm:mb-6 font-[Cinzel] tracking-wide">
               Contact Us
             </h3>
-            <ul className="space-y-4 font-[Bellefair] text-base w-full">
+            <ul className="space-y-4 font-[Bellefair] text-sm sm:text-base w-full">
               <li className="flex items-start gap-3 w-full">
                 <FaMapMarkerAlt className="text-amber-400 mt-1" />
                 <div className="flex flex-col w-full">
-                  <span className="text-gray-400 text-[13px] leading-tight w-full block">
+                  <span className="text-gray-400 text-xs sm:text-sm leading-tight w-full block">
                     ST JOHNS-DOME-KWABENYA
                   </span>
-                  <span className="text-gray-400 text-[13px] leading-tight w-full block">
+                  <span className="text-gray-400 text-xs sm:text-sm leading-tight w-full block">
                     GREATER ACCRA
                   </span>
                 </div>
@@ -189,7 +189,7 @@ const Footer = () => {
                 <FaPhone className="text-amber-400" />
                 <a
                   href="tel:+233559891727"
-                  className="text-gray-300 hover:text-amber-400 transition-colors text-[15px] break-all"
+                  className="text-gray-300 hover:text-amber-400 transition-colors text-sm sm:text-base break-all"
                 >
                   (+233) 0559891727
                 </a>

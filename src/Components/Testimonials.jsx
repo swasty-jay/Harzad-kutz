@@ -59,14 +59,14 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400 cinzel">
+          <span className="inline-block px-4 py-1 mb-4 text-xs sm:text-sm font-medium tracking-widest text-amber-300 uppercase border border-amber-400 cinzel">
             Client Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold cinzel text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold cinzel text-white mb-4">
             What Our Clients Say
           </h2>
           <div className="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
-          <p className="text-gray-300 bellefair text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 bellefair text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our valued clients have
             to say about their experience at Hazard Kutz.
           </p>
@@ -109,16 +109,16 @@ export default function Testimonials() {
 
                 {/* Testimonial Content */}
                 <div className="flex-1 text-center md:text-left">
-                  <p className="text-gray-300 text-lg bellefair leading-relaxed mb-6">
+                  <p className="text-gray-300 text-base sm:text-lg bellefair leading-relaxed mb-6">
                     "{testimonials[activeTestimonial].text}"
                   </p>
 
                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
                     <div>
-                      <h4 className="text-amber-400 font-bold cinzel text-lg">
+                      <h4 className="text-amber-400 font-bold cinzel text-base sm:text-lg">
                         {testimonials[activeTestimonial].name}
                       </h4>
-                      <p className="text-gray-400 bellefair">
+                      <p className="text-gray-400 bellefair text-sm sm:text-base">
                         {testimonials[activeTestimonial].role}
                       </p>
                     </div>

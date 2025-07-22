@@ -205,12 +205,12 @@ export default function NavBar() {
         <div className="max-w-6xl mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="text-2xl cinzel italic text-gray-800 font-bold">
+            <div className="text-xl sm:text-2xl cinzel italic text-gray-800 font-bold">
               <Link to={"/"}> Hazard Kutz </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="flex items-center space-x-8 text-lg cinzel">
+            <div className="flex items-center space-x-8 text-base sm:text-lg cinzel">
               <Link
                 to="/services"
                 className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
