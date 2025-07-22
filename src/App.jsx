@@ -6,6 +6,7 @@ import Services from "./Components/Services";
 import Gallry from "./Components/Gallary";
 import NotFoundPage from "./Pages/NotFound";
 import AboutSection from "./Pages/About";
+import Blog from "./Pages/Blog";
 import ScrollToTop from "./Components/ScrollToTop";
 import { Toaster } from "react-hot-toast";
 
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/gallery" element={<Gallry />} />
           <Route path="/about" element={<AboutSection />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
