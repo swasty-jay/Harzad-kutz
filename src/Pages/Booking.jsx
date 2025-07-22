@@ -33,7 +33,7 @@ export default function BookingForm() {
             Book Your <span className="text-amber-400">Appointment</span>
           </h2>
           <div className="w-20 h-1 bg-amber-500 mx-auto mb-6"></div>
-          <p className="text-gray-700 max-w-2xl mx-auto">
+          <p className="text-gray-700 max-w-2xl text-lg mx-auto bellefair">
             Schedule your next haircut with our professional barbers. Choose
             your preferred service, barber, and time slot.
           </p>
@@ -87,7 +87,7 @@ export default function BookingForm() {
                         href={FRESHA_BOOKING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-amber-400 hover:text-amber-500 underline bellefair inline-flex items-center"
+                        className="text-amber-400 hover:text-amber-500 underline text-base bellefair inline-flex items-center"
                       >
                         visit our Fresha page directly
                         <ExternalLink className="w-3 h-3 ml-1" />
@@ -197,7 +197,7 @@ export default function BookingForm() {
                     <Scissors className="w-4 h-4 mr-2 text-amber-400" />
                     Why Book with Fresha?
                   </h4>
-                  <ul className="text-sm text-gray-900 space-y-2 bellefair">
+                  <ul className="text-sm sm:text-md text-gray-900 space-y-2 bellefair">
                     <li>• Real-time availability</li>
                     <li>• Instant confirmation</li>
                     <li>• Easy rescheduling</li>
@@ -211,7 +211,7 @@ export default function BookingForm() {
                     <Scissors className="w-4 h-4 mr-2 text-amber-400" />
                     Booking Policy
                   </h4>
-                  <ul className="text-sm text-gray-900 space-y-2 bellefair">
+                  <ul className="text-sm sm:text-md text-gray-900 space-y-2 bellefair">
                     <li>
                       • Please arrive 5-10 minutes before your appointment
                     </li>
