@@ -153,12 +153,17 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 font-[Bellefair] text-sm sm:text-base">
               <li className="flex flex-col sm:flex-row sm:justify-between w-full">
-                <span className="text-gray-300 font-medium">Mon-Sat:</span>
+                <span className="text-gray-300 font-medium">Tue-Sat:</span>
                 <span className="text-gray-400 ml-1">9:00AM - 8:30PM</span>
               </li>
               <li className="flex flex-col sm:flex-row sm:justify-between w-full">
                 <span className="text-gray-300 font-medium">Sunday:</span>
                 <span className="text-gray-400">2:30PM - 9:00PM</span>
+              </li>
+
+              <li className="flex flex-col sm:flex-row sm:justify-between w-full">
+                <span className="text-gray-300 font-medium">Monday:</span>
+                <span className="text-gray-400">Day off</span>
               </li>
             </ul>
           </motion.div>
@@ -231,7 +236,7 @@ const Footer = () => {
               href="https://wa.me/+233245870688" // Replace with your actual portfolio link
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-400 underline hover:text-amber-500 text-base font-[Cinzel]"
+              className="text-amber-400 underline hover:text-amber-500 text-base font-[Bellefair]"
             >
               swasty-jay
             </a>
