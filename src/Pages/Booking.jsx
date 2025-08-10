@@ -6,18 +6,9 @@ import { Scissors, ExternalLink } from "lucide-react";
 export default function BookingForm() {
   const [showWidget, setShowWidget] = useState(false);
 
-  // Replace this with the actual Fresha business URL
-  const FRESHA_BOOKING_URL = "https://www.fresha.com/a/your-barbershop-name";
-
-  const services = [
-    { id: "Duo experience", name: "Haircut", price: "₵100" },
-    { id: "fade", name: "Taper Fade", price: "₵60" },
-    { id: "beard", name: "Beard Trim", price: "₵40" },
-    { id: "family package", name: "Family package", price: "₵500" },
-    { id: "elite experience", name: "Elite Experience", price: "₵300" },
-    { id: "design", name: "Hair Dye", price: "₵120" },
-    { id: "kids", name: "Kids Cut", price: "₵50" },
-  ];
+  // Fresha business URL
+  const FRESHA_BOOKING_URL =
+    "https://www.fresha.com/p/emmanuel-asamoah-5568781?share=true&pId=2510665";
 
   return (
     <section id="booking" className="py-20 ">
@@ -112,7 +103,7 @@ export default function BookingForm() {
                   {/* Fresha Widget Iframe */}
                   <div className="relative w-full h-[600px] rounded-lg overflow-hidden border border-amber-200">
                     <iframe
-                      src={`${FRESHA_BOOKING_URL}/book-now`}
+                      src={FRESHA_BOOKING_URL}
                       width="100%"
                       height="100%"
                       frameBorder="0"
@@ -121,7 +112,7 @@ export default function BookingForm() {
                     />
                   </div>
 
-                  <p className="text-xs text-gray-500 mt-2 text-center bellefair">
+                  <p className="text-sm md:text-xl text-gray-500 mt-2 text-center bellefair">
                     Having trouble? Try opening in a{" "}
                     <a
                       href={FRESHA_BOOKING_URL}
@@ -152,46 +143,6 @@ export default function BookingForm() {
               </div>
 
               <div className="p-6">
-                <div className="mb-6">
-                  <div className="flex items-center mb-3">
-                    <FaClock className="text-amber-400 mr-3" />
-                    <h4 className="font-semibold cinzel text-lg text-amber-500">
-                      Business Hours
-                    </h4>
-                  </div>
-                  <div className="ml-8 space-y-2 bellefair">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-900">MON - SAT</span>
-                      <span className="font-medium">9:00 AM - 8:30 PM</span>
-                    </div>
-
-                    <div className="flex justify-between items-center bellefair">
-                      <span className="text-gray-900">SUNDAY</span>
-                      <span className="font-medium">2:30 PM - 9:00 PM</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <div className="flex items-center mb-3">
-                    <FaCut className="text-amber-400 mr-3" />
-                    <h4 className="font-semibold text-lg text-amber-500 cinzel">
-                      Our Services
-                    </h4>
-                  </div>
-                  <div className="ml-8 space-y-2 bellefair">
-                    {services.map((service) => (
-                      <div
-                        key={service.id}
-                        className="flex justify-between items-center"
-                      >
-                        <span className="text-gray-900">{service.name}</span>
-                        <span className="font-medium">{service.price}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
                   <h4 className="font-semibold mb-2 cinzel flex items-center text-amber-500">
                     <Scissors className="w-4 h-4 mr-2 text-amber-400" />
