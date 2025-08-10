@@ -9,7 +9,7 @@ const blogPosts = [
     excerpt:
       "Discover the latest trends in men's hairstyles, from modern fades to classic cuts that are making waves this year.",
     image: "/photos/1.jpg",
-    author: "Eden Hazard",
+    author: "Emmanuel",
     date: "July 15, 2025",
     category: "Style Trends",
   },
@@ -19,7 +19,7 @@ const blogPosts = [
     excerpt:
       "Expert tips and techniques for keeping your beard looking sharp, healthy, and perfectly groomed all year round.",
     image: "/photos/2.jpg",
-    author: "Eden Hazard",
+    author: "Emmanuel",
     date: "July 10, 2025",
     category: "Grooming Tips",
   },
@@ -29,7 +29,7 @@ const blogPosts = [
     excerpt:
       "Learn how to select the perfect hairstyle that complements your face shape and enhances your features.",
     image: "/photos/3.jpg",
-    author: "Eden Hazard",
+    author: "Emmanuel",
     date: "July 5, 2025",
     category: "Style Guide",
   },
