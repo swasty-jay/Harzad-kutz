@@ -41,7 +41,7 @@ export default function Blog() {
   };
 
   return (
-    <section className="pt-32 pb-20 bg-gray-100 min-h-screen relative overflow-hidden">
+    <section className="py-4 bg-gray-100 min-h-screen relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-900 to-transparent opacity-5"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-400/5 rounded-full blur-3xl -mr-48 -mb-48"></div>
@@ -53,15 +53,15 @@ export default function Blog() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <span className="inline-block px-4 py-1 mb-4 text-sm font-medium tracking-widest text-amber-500 uppercase border border-amber-400 cinzel">
+          <span className="inline-block px-4 py-1 mb-2 text-sm font-medium tracking-widest text-amber-500 uppercase border border-amber-400 cinzel">
             Our Blog
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold cinzel text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold cinzel text-gray-900 mb-1">
             Latest Articles & News
           </h1>
-          <div className="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-amber-400 mx-auto mb-2"></div>
           <p className="text-gray-600 bellefair text-lg max-w-2xl mx-auto">
             Discover the latest trends, expert tips, and insights from the world
             of men's grooming and style.
@@ -70,7 +70,7 @@ export default function Blog() {
 
         {/* Error Message */}
         {error && (
-          <div className="text-center mb-8">
+          <div className="text-center mb-3">
             <p className="text-red-500 bellefair">{error}</p>
             <button
               onClick={() => {

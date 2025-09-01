@@ -229,6 +229,13 @@ export default function NavBar() {
               >
                 Gallery
               </Link>
+
+              <Link
+                to="/blog"
+                className="text-gray-700 hover:text-black font-medium transition-colors duration-200"
+              >
+                Blog
+              </Link>
             </div>
 
             {/* Desktop Social Icons */}
@@ -342,6 +349,14 @@ export default function NavBar() {
                     onClick={() => setMenuOpen(false)}
                   >
                     <span className="font-medium">Gallery</span>
+                  </Link>
+
+                  <Link
+                    to="/blog"
+                    className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-black transition-all duration-200 border-l-4 border-transparent hover:border-gray-800"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    <span className="font-medium">Blog</span>
                   </Link>
                 </div>
               </div>
