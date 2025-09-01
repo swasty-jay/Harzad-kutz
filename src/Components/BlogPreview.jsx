@@ -1,8 +1,10 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { FaCalendar, FaUser, FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { getBlogPosts } from "../services/contentful";
 
-const blogPosts = [
+const defaultPosts = [
   {
     id: 1,
     title: "Top Men's Hairstyle Trends for 2025",
@@ -36,6 +38,25 @@ const blogPosts = [
 ];
 
 export default function BlogPreview() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const result = await getBlogPosts({ limit: 3 });
+        setPosts(result.posts);
+      } catch (error) {
+        console.error("Error fetching preview posts:", error);
+        setPosts(defaultPosts);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
   return (
     <section className="py-20 bg-gray-100 relative overflow-hidden">
       {/* Decorative Background Elements */}
@@ -67,68 +88,73 @@ export default function BlogPreview() {
 
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
-            <motion.div
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                {/* Image Container */}
-                <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute bottom-4 left-4 z-20">
-                    <span className="px-3 py-1 bg-amber-400 text-black text-xs font-semibold rounded-full cinzel">
-                      {post.category}
-                    </span>
+          {loading ? (
+            // Loading skeleton placeholders
+            <BlogPostSkeleton />
+          ) : (
+            posts.map((post, index) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  {/* Image Container */}
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                    <img
+                      src={post.coverImage || "/photos/1.jpg"}
+                      alt={post.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute bottom-4 left-4 z-20">
+                      <span className="px-3 py-1 bg-amber-400 text-black text-xs font-semibold rounded-full cinzel">
+                        {post.tags}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 cinzel text-gray-900 group-hover:text-amber-500 transition-colors duration-300">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 bellefair mb-4 line-clamp-2">
-                    {post.excerpt}
-                  </p>
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3 cinzel text-gray-900 group-hover:text-amber-500 transition-colors duration-300">
+                      {post.title}
+                    </h3>
+                    <p className="text-gray-600 bellefair mb-4 line-clamp-2">
+                      {post.body}
+                    </p>
 
-                  {/* Meta Information */}
-                  <div className="flex items-center justify-between text-sm text-gray-500 bellefair">
-                    <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-2">
-                        <FaUser className="text-amber-400" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <FaCalendar className="text-amber-400" />
-                        <span>{post.date}</span>
+                    {/* Meta Information */}
+                    <div className="flex items-center justify-between text-sm text-gray-500 bellefair">
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2">
+                          <FaUser className="text-amber-400" />
+                          <span>{post.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <FaCalendar className="text-amber-400" />
+                          <span>{post.date}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Read More Link */}
-                <div className="px-6 pb-6">
-                  <Link
-                    to={`/blog/`}
-                    className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-600 transition-colors duration-300 cinzel text-sm font-semibold"
-                  >
-                    Read More
-                    <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
+                  {/* Read More Link */}
+                  <div className="px-6 pb-6">
+                    <Link
+                      to={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-600 transition-colors duration-300 cinzel text-sm font-semibold"
+                    >
+                      Read More
+                      <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))
+          )}
         </div>
 
         {/* View All Button */}
