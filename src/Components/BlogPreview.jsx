@@ -3,39 +3,40 @@ import { FaCalendar, FaUser, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { getBlogPosts } from "../services/contentful";
+import BlogPostSkeleton from "./BlogPostSkeleton";
 
-const defaultPosts = [
-  {
-    id: 1,
-    title: "Top Men's Hairstyle Trends for 2025",
-    excerpt:
-      "Discover the latest trends in men's hairstyles, from modern fades to classic cuts that are making waves this year.",
-    image: "/photos/1.jpg",
-    author: "Emmanuel",
-    date: "July 15, 2025",
-    category: "Style Trends",
-  },
-  {
-    id: 2,
-    title: "The Art of Beard Maintenance",
-    excerpt:
-      "Expert tips and techniques for keeping your beard looking sharp, healthy, and perfectly groomed all year round.",
-    image: "/photos/2.jpg",
-    author: "Emmanuel",
-    date: "July 10, 2025",
-    category: "Grooming Tips",
-  },
-  {
-    id: 3,
-    title: "Choosing the Right Haircut for Your Face Shape",
-    excerpt:
-      "Learn how to select the perfect hairstyle that complements your face shape and enhances your features.",
-    image: "/photos/3.jpg",
-    author: "Emmanuel",
-    date: "July 5, 2025",
-    category: "Style Guide",
-  },
-];
+// const defaultPosts = [
+//   {
+//     id: 1,
+//     title: "Top Men's Hairstyle Trends for 2025",
+//     excerpt:
+//       "Discover the latest trends in men's hairstyles, from modern fades to classic cuts that are making waves this year.",
+//     image: "/photos/1.jpg",
+//     author: "Emmanuel",
+//     date: "July 15, 2025",
+//     category: "Style Trends",
+//   },
+//   {
+//     id: 2,
+//     title: "The Art of Beard Maintenance",
+//     excerpt:
+//       "Expert tips and techniques for keeping your beard looking sharp, healthy, and perfectly groomed all year round.",
+//     image: "/photos/2.jpg",
+//     author: "Emmanuel",
+//     date: "July 10, 2025",
+//     category: "Grooming Tips",
+//   },
+//   {
+//     id: 3,
+//     title: "Choosing the Right Haircut for Your Face Shape",
+//     excerpt:
+//       "Learn how to select the perfect hairstyle that complements your face shape and enhances your features.",
+//     image: "/photos/3.jpg",
+//     author: "Emmanuel",
+//     date: "July 5, 2025",
+//     category: "Style Guide",
+//   },
+// ];
 
 export default function BlogPreview() {
   const [posts, setPosts] = useState([]);
@@ -89,7 +90,6 @@ export default function BlogPreview() {
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loading ? (
-            // Loading skeleton placeholders
             <BlogPostSkeleton />
           ) : (
             posts.map((post, index) => (
@@ -122,9 +122,11 @@ export default function BlogPreview() {
                     <h3 className="text-xl font-bold mb-3 cinzel text-gray-900 group-hover:text-amber-500 transition-colors duration-300">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 bellefair mb-4 line-clamp-2">
-                      {post.body}
-                    </p>
+                    <div>
+                      <p className="text-gray-600 bellefair mb-4 ">
+                        {post.body}
+                      </p>
+                    </div>
 
                     {/* Meta Information */}
                     <div className="flex items-center justify-between text-sm text-gray-500 bellefair">
