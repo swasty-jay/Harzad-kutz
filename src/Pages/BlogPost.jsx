@@ -72,10 +72,10 @@ export default function BlogPost() {
   }
 
   return (
-    <article className="min-h-screen bg-white">
+    <article className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-gray-50 to-white">
-        <div className="relative max-w-4xl mx-auto px-6 pt-20 pb-6">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-4 sm:pb-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export default function BlogPost() {
             )} */}
 
             {/* Title */}
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-1 leading-tight bellefair">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-1 leading-tight cinzel px-2">
               {post.title}
             </h1>
           </motion.div>
@@ -110,17 +110,17 @@ export default function BlogPost() {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-3xl mx-auto px-6 pb-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-12 sm:pb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           {/* Article Content */}
-          <div className="prose prose-lg prose-gray max-w-none bellefair">
-            <div className="text-lg leading-relaxed text-gray-700 space-y-6">
+          <div className="prose prose-sm sm:prose-base md:prose-lg prose-gray max-w-none bellefair">
+            <div className="text-base sm:text-lg leading-relaxed text-gray-700 space-y-4 sm:space-y-6">
               {typeof post.body === "string" ? (
-                <p className="first-letter:text-6xl first-letter:font-bold first-letter:text-gray-900 first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">
+                <p className="first-letter:text-4xl sm:first-letter:text-5xl md:first-letter:text-6xl first-letter:font-bold first-letter:text-gray-900 first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">
                   {documentToReactComponents(post.body)}
                 </p>
               ) : (
@@ -131,14 +131,14 @@ export default function BlogPost() {
                       return (
                         <p
                           key={index}
-                          className="first-letter:text-6xl first-letter:font-bold first-letter:text-gray-900 first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none mb-6"
+                          className="first-letter:text-4xl sm:first-letter:text-5xl md:first-letter:text-6xl first-letter:font-bold first-letter:text-gray-900 first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none mb-4 sm:mb-6"
                         >
                           {text}
                         </p>
                       );
                     }
                     return (
-                      <p key={index} className="mb-4 leading-relaxed">
+                      <p key={index} className="mb-3 sm:mb-4 leading-relaxed">
                         {text}
                       </p>
                     );
@@ -150,17 +150,21 @@ export default function BlogPost() {
           </div>
 
           {/* Author Section */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
-                <FaUser className="text-white text-sm" />
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900 cinzel">Written by</p>
+          <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                  <FaUser className="text-white text-xs sm:text-sm" />
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900 cinzel text-sm sm:text-base">
+                    Written by
+                  </p>
+                </div>
               </div>
 
               {/* Meta Information */}
-              <div className="flex items-center justify-center gap-8 text-sm text-gray-600 bellefair">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600 bellefair ml-0 sm:ml-4">
                 <div className="flex items-center gap-2">
                   <FaUser className="text-gray-400 text-xs" />
                   <span className="font-medium">{post.author}</span>
@@ -178,9 +182,9 @@ export default function BlogPost() {
           </div>
 
           {/* Navigation Hint */}
-          <div className="mt-6 pt-6 border-t border-gray-100">
+          <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-100">
             <div className="text-center">
-              <p className="text-sm text-gray-500 bellefair">
+              <p className="text-xs sm:text-sm text-gray-500 bellefair">
                 Thank you for reading
               </p>
             </div>
