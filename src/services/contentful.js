@@ -66,6 +66,11 @@ export async function getBlogPosts({ skip = 0, limit = 9 }) {
           ? new Date(fields.publishedDate).toLocaleDateString()
           : "",
         category: fields.tags || "General",
+        readingtime:
+          Math.ceil(
+            fields.body?.content?.[0]?.content?.[0]?.value?.split(" ").length /
+              200
+          ) || 1,
         featuredImage: fields.coverImage
           ? "https:" + fields.coverImage.fields.file.url
           : null,

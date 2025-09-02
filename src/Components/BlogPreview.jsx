@@ -77,7 +77,7 @@ export default function BlogPreview() {
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
                       <img
-                        src={post.coverImage || "/photos/1.jpg"}
+                        src={post.featuredImage || "/photos/1.jpg"}
                         alt={post.title}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                       />
@@ -94,7 +94,7 @@ export default function BlogPreview() {
                         {post.title}
                       </h3>
                       <div>
-                        <p className="text-gray-600 bellefair mb-4 line-clamp-2">
+                        <p className="text-gray-600 bellefair mb-0.5 line-clamp-4">
                           {post.excerpt ||
                             (typeof post.body === "string"
                               ? post.body
@@ -104,7 +104,7 @@ export default function BlogPreview() {
                       </div>
 
                       {/* Meta Information */}
-                      <div className="flex items-center justify-between text-sm text-gray-500 bellefair">
+                      {/* <div className="flex items-center justify-between text-sm text-gray-500 bellefair">
                         <div className="flex items-center gap-4">
                           <div className="flex items-center gap-2">
                             <FaUser className="text-amber-400" />
@@ -115,7 +115,7 @@ export default function BlogPreview() {
                             <span>{post.date}</span>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* Read More Link */}

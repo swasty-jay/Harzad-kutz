@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaCalendar, FaUser, FaArrowRight, FaSpinner } from "react-icons/fa";
+import {
+  FaCalendar,
+  FaUser,
+  FaArrowRight,
+  FaSpinner,
+  FaClock,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { getBlogPosts } from "../services/contentful";
 import BlogPostSkeleton from "../Components/BlogPostSkeleton";
@@ -12,10 +18,6 @@ export default function Blog() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const postsPerPage = 9;
-
-  useEffect(() => {
-    fetchPosts();
-  }, [page]);
 
   const fetchPosts = async () => {
     try {
@@ -33,12 +35,16 @@ export default function Blog() {
 
       setHasMore(result.total > skip + postsPerPage);
       setError(null);
-    } catch (err) {
+    } catch {
       setError("Failed to load blog posts. Please try again later.");
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchPosts();
+  }, [page]);
 
   return (
     <section className="pt-22 sm:py-4 bg-gray-100 min-h-screen relative overflow-hidden">
