@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import barber1 from "../assets/barber-1.jpg"; // main image
+import barber3 from "../assets/gen.png"; // background image
 import { Link } from "react-router-dom";
 
 function HeroSection() {
@@ -21,9 +21,10 @@ function HeroSection() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black z-10" />
         <img
-          src={barber1}
+          src={barber3}
           alt="Professional Barbershop"
           className="w-full h-full object-cover opacity-80"
+          style={{ objectPosition: "50% 25%" }}
         />
       </motion.div>
 
