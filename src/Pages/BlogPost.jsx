@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FaCalendar, FaUser, FaClock } from "react-icons/fa";
 import { getBlogPost } from "../services/contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import BlogPostSkeleton from "../Components/BlogPostSkeleton";
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -28,7 +29,7 @@ export default function BlogPost() {
   }, [slug]);
 
   if (loading) {
-    return <span>loading</span>;
+    return <BlogPostSkeleton />;
   }
 
   if (error) {
@@ -152,16 +153,7 @@ export default function BlogPost() {
           {/* Author Section */}
           <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
-                  <FaUser className="text-white text-xs sm:text-sm" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 cinzel text-sm sm:text-base">
-                    Written by
-                  </p>
-                </div>
-              </div>
+              {/* <div className="flex items-center gap-4"></div> */}
 
               {/* Meta Information */}
               <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600 bellefair ml-0 sm:ml-4">
