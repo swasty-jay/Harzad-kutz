@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-// import PropTypes from "prop-types";
 
 export default function ErrorFallback({ error, resetErrorBoundary }) {
   return (
@@ -69,10 +68,3 @@ export default function ErrorFallback({ error, resetErrorBoundary }) {
     </motion.div>
   );
 }
-
-// ErrorFallback.propTypes = {
-//   error: PropTypes.shape({
-//     message: PropTypes.string,
-//   }),
-//   resetErrorBoundary: PropTypes.func.isRequired,
-// };
