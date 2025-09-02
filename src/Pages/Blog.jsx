@@ -41,7 +41,7 @@ export default function Blog() {
   };
 
   return (
-    <section className="py-4 bg-gray-100 min-h-screen relative overflow-hidden">
+    <section className="pt-22 sm:py-4 bg-gray-100 min-h-screen relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-900 to-transparent opacity-5"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-400/5 rounded-full blur-3xl -mr-48 -mb-48"></div>

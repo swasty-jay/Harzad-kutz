@@ -76,7 +76,7 @@ export default function BlogPost() {
     <article className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-gray-50 to-white">
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-4 sm:pb-6">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 pt-24 sm:pt-8 pb-4 sm:pb-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
